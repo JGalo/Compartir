@@ -7,21 +7,21 @@ CREATE TABLE educadors(codigo varchar(10) NOT NULL,
                       nombre varchar(30),
 		                  apellido varchar(30),
 											PRIMARY KEY (codigo) 
-											) ENGINE=INNODB;
+											) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE centros(nombre varchar(30) NOT NULL,
 										sector varchar(20) NOT NULL,
 										codigoAdministrador varchar(10),
 										FOREIGN KEY (codigoAdministrador) REFERENCES educadors(codigo) ON DELETE SET NULL ON UPDATE CASCADE,
 										PRIMARY KEY (nombre,sector) 
-										) ENGINE=INNODB;
+										) ENGINE=INNODB DEFAULT CHARSET=utf8;
 										
 
 CREATE TABLE padrinos(codigo varchar(10) NOT NULL,
 										 nombre varchar(50),
 										 nacionalidad varchar(30),
 										 PRIMARY KEY (codigo)
-										) ENGINE=INNODB;
+										) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE ninos(codigo varchar(10) NOT NULL, 
 									nombre varchar(50) NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE ninos(codigo varchar(10) NOT NULL,
                   FOREIGN KEY (nombreCentro,nombreSector) REFERENCES centros(nombre,sector) ON UPDATE CASCADE,
                   FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo),
 									PRIMARY KEY (codigo)
-									) ENGINE=INNODB;
+									) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE apadrinas(
 						codigoNino varchar(10) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE apadrinas(
             FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
             FOREIGN KEY (codigoPadrino) REFERENCES padrinos(codigo),
 						PRIMARY KEY (codigoNino,codigoPadrino)
-					) ENGINE=INNODB;
+					) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE historials(
 									codigoNino varchar(10) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE historials(
 									descripcion mediumtext,
                   FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
 									PRIMARY KEY (codigoNino, fecha)
-								) ENGINE=INNODB;
+								) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE familiars(
@@ -71,7 +71,7 @@ CREATE TABLE familiars(
 					parentesco varchar(15),
 					lugarTrabajo varchar(50),
 					PRIMARY KEY (nombre, apellido)
-					) ENGINE=INNODB;
+					) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE beneficios(
 				  codigoNino	varchar(10) NOT NULL, 
@@ -82,7 +82,7 @@ CREATE TABLE beneficios(
 					observacion text,
           FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
 					PRIMARY KEY (codigoNino,tipoBeneficio)
-					) ENGINE=INNODB;
+					) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE situacion_academicas(
 			  codigoNino varchar(10) NOT NULL,
@@ -92,13 +92,13 @@ CREATE TABLE situacion_academicas(
 				observacion text,
         FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
 				PRIMARY KEY (codigoNino,anio)
-				) ENGINE=INNODB;
+				) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE programas(
 				tipo varchar(20) NOT NULL,
 				componente varchar(20) NOT NULL,
 				PRIMARY KEY (tipo,componente)
-			) ENGINE=INNODB;
+			) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE participas(
 				codigoNino varchar(10) NOT NULL,
@@ -110,7 +110,7 @@ CREATE TABLE participas(
 				FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
 				FOREIGN KEY (tipoPrograma,componentePrograma) REFERENCES programas(tipo,componente),
 				PRIMARY KEY (codigoNino,tipoPrograma,componentePrograma)
-			) ENGINE = INNODB;			
+			) ENGINE = INNODB DEFAULT CHARSET=utf8;			
 
 CREATE TABLE esfamiliars(
         codigoNino varchar(10) NOT NULL,
@@ -120,11 +120,11 @@ CREATE TABLE esfamiliars(
         FOREIGN KEY (nombreFamiliar,apellidoFamiliar) REFERENCES familiars(nombre,apellido) ON DELETE CASCADE,
         PRIMARY KEY (codigoNino,nombreFamiliar,apellidoFamiliar)
 
-        ) ENGINE = INNODB;
+        ) ENGINE = INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE telefono_educadors(
        codigoEducador varchar(10) NOT NULL,
        telefono varchar(16) NOT NULL,
        FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo) ON DELETE CASCADE,
        PRIMARY KEY (codigoEducador,telefono)
-       ) ENGINE = INNODB;
+       ) ENGINE = INNODB DEFAULT CHARSET=utf8;

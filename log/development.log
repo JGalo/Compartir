@@ -1991,3 +1991,83 @@ Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:49:44 -0600 2011
   [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
 Rendered listados/index.html.erb within layouts/application (53.3ms)
 Completed 200 OK in 211ms (Views: 108.7ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `educadors`[0m
+  [1m[35mAREL (1.2ms)[0m  INSERT INTO `educadors` (`codigo`, `nombre`, `apellido`) VALUES ('educ-01', 'Juan', 'Perez')
+  [1m[36mSQL (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT * FROM educadors
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT * FROM educadors[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT * FROM educadors
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT * FROM educadors[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mEducador Load (0.7ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.7ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.5ms)[0m  describe `centros`
+  [1m[36mAREL (20.2ms)[0m  [1mINSERT INTO `centros` (`sector`, `nombre`, `codigoAdministrador`) VALUES ('1', 'pinos', 'educ-01')[0m
+  [1m[35mSQL (2.4ms)[0m  COMMIT
+WARNING: Can't mass-assign protected attributes: codigo
+WARNING: Can't mass-assign protected attributes: codigo
+WARNING: Can't mass-assign protected attributes: codigo
+  [1m[36mSQL (1.7ms)[0m  [1mBEGIN[0m
+  [1m[35mNino Load (0.5ms)[0m  SELECT `ninos`.`codigo` FROM `ninos` WHERE (`ninos`.`codigo` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+WARNING: Can't mass-assign protected attributes: codigo
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.`codigo` FROM `ninos` WHERE (`ninos`.`codigo` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+WARNING: Can't mass-assign protected attributes: codigo
+WARNING: Can't mass-assign protected attributes: codigo
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  SHOW TABLES
+  [1m[36mNino Load (61.2ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = BINARY 'htc-01') LIMIT 1[0m
+  [1m[35mSQL (2.7ms)[0m  describe `ninos`
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO `ninos` (`apellido`, `nombreCentro`, `sexo`, `fechaNac`, `habitaCon`, `codigo`, `estadoPadrinazgo`, `nombre`, `codigoEducador`, `nombreSector`) VALUES ('hernandez', 'pinos', 'm', NULL, 'madre', 'htc-01', 'otros', 'juan', 'educ-01', '1')[0m
+  [1m[35mSQL (2.2ms)[0m  COMMIT
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo
+  [1m[36mNino Load (0.8ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo=educ-01[0m
+Mysql2::Error: Unknown column 'educ' in 'where clause': SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo=educ-01
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="#{codigo_educador}" [0m
+  [1m[35mSQL (0.3ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="#{codigo_educador}" 
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="#{codigo_educador}" [0m
+  [1m[35mSQL (0.3ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="#{codigo_educador}" 
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="#{codigo_educador}" [0m
+  [1m[35mNino Load (0.3ms)[0m  SELECT `ninos`.* FROM `ninos`
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="#{codigo_educador}" [0m
+  [1m[35mSQL (1.0ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="educ-01" 
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="educ-01" [0m
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo="educ-01" [0m
+  [1m[35mSQL (1.0ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-01'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-01'[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='EDUC-01'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='EDUC-01'[0m
+  [1m[35mEducador Load (4.0ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `educadors`[0m
+  [1m[35mAREL (0.7ms)[0m  INSERT INTO `educadors` (`nombre`, `apellido`, `codigo`) VALUES ('Pedro', 'Hernandez', 'educ-02')
+  [1m[36mSQL (9.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mEducador Load (0.6ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mNino Load (1.5ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = BINARY 'htc-02') LIMIT 1
+  [1m[36mSQL (2.5ms)[0m  [1mdescribe `ninos`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `ninos` (`nombreSector`, `sexo`, `nombre`, `fechaNac`, `habitaCon`, `nombreCentro`, `codigoEducador`, `apellido`, `estadoPadrinazgo`, `codigo`) VALUES ('1', 'm', 'juan', NULL, 'madre', 'pinos', 'educ-02', 'matute', 'otros', 'htc-02')
+  [1m[36mSQL (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-02'
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-01'[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-02'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-02'[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-01'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-02'[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-01'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-02'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='educ-01'
