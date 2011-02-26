@@ -12,7 +12,7 @@ CREATE TABLE educadors(codigo varchar(10) NOT NULL,
 CREATE TABLE centros(nombre varchar(30) NOT NULL,
 										sector varchar(20) NOT NULL,
 										codigoAdministrador varchar(10),
-										FOREIGN KEY (codigoAdministrador) REFERENCES educadors(codigo),
+										FOREIGN KEY (codigoAdministrador) REFERENCES educadors(codigo) ON DELETE SET NULL ON UPDATE CASCADE,
 										PRIMARY KEY (nombre,sector) 
 										) ENGINE=INNODB;
 										
@@ -33,7 +33,7 @@ CREATE TABLE ninos(codigo varchar(10) NOT NULL,
 									nombreCentro varchar(30) NOT NULL,
 									nombreSector varchar(20) NOT NULL,
 									codigoEducador varchar(10),
-                  FOREIGN KEY (nombreCentro,nombreSector) REFERENCES centros(nombre,sector),
+                  FOREIGN KEY (nombreCentro,nombreSector) REFERENCES centros(nombre,sector) ON UPDATE CASCADE,
                   FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo),
 									PRIMARY KEY (codigo)
 									) ENGINE=INNODB;
@@ -43,6 +43,7 @@ CREATE TABLE apadrinas(
 						codigoPadrino varchar(10) NOT NULL,
 						fechaInicio date,
 						fechaInterrupcion date,
+						tipoPadrinazgo varchar(25),
             FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
             FOREIGN KEY (codigoPadrino) REFERENCES padrinos(codigo),
 						PRIMARY KEY (codigoNino,codigoPadrino)
@@ -116,7 +117,7 @@ CREATE TABLE esfamiliars(
         nombreFamiliar varchar(30) NOT NULL,
 				apellidoFamiliar varchar(30) NOT NULL,
         FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
-        FOREIGN KEY (nombreFamiliar,apellidoFamiliar) REFERENCES familiars(nombre,apellido),
+        FOREIGN KEY (nombreFamiliar,apellidoFamiliar) REFERENCES familiars(nombre,apellido) ON DELETE CASCADE,
         PRIMARY KEY (codigoNino,nombreFamiliar,apellidoFamiliar)
 
         ) ENGINE = INNODB;

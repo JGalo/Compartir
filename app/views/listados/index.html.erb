@@ -1,15 +1,55 @@
 <div class="busqueda">
+
+	<form id="seleccion" action="/index" method="get">
 	<fieldset>
 	<legend>Criterios de busqueda</legend>
-	<form id="seleccion" action="/busqueda" method="get">
 
+		<div id="educador">
 		<h3>Educador</h3>
 		<input type="checkbox" class="educ" name="educ[]" value="todo">Todos los educadores</input></br>
-		<%@educador.each do |e| %>
-			<input type="checkbox" class="educ" name="educ[]" value=<%=e.codigo%>><%="#{e.codigo} #{e.nombre} #{e.apellido}"%>  </input></br>
+		<%unless @educador.nil?%>
+			<%@educador.each do |e| %>
+				<input type="checkbox" class="educ" name="educ[]" value=<%=e.codigo%>><%="#{e.codigo} #{e.nombre} #{e.apellido}"%>  </input></br>
+			<%end%>
 		<%end%>
-			
+		</div>	
+	
+		<div id="padrinazgo">
+		<h3>Tipo Padrinazgo</h3>
+			<input type="radio" value="ingresar" name="padrinazgo">Padrinazgo por ingresar </input></br>
+			<input type="radio" value="compartir" name="padrinazgo">Padrinazgo compartir</input></br>
+			<input type="radio" value="partage" name="padrinazgo">Padrinazgo partage </input></br>
+			<input type="radio" value="otros" name="padrinazgo">Otros padrinazgos </input></br>
+			<input type="radio" value="interrupcion" name="padrinazgo">Interrupcion padrinazgo</input></br>
+			<input type="radio" value="propuestos" name="padrinazgo">Propuestos para egresos</input></br>
+			<input type="radio" value="egresados" name="padrinazgo">Egresados</input></br>
+		</div>
+
+		<div id="sexo">
+		<h3>Sexo</h3>
+			<input type="radio" value="m" name="sexo">masculino</input></br>
+			<input type="radio" value="f" name="sexo">femenino</input></br>
+		</div>
+
+		<div id="centro">
+			<h3>Centro</h3>
+			<%unless @centros.nil?%>
+				<%@centros.each do |c|%>
+				 	<input type="checkbox" class="cent" name="centro[]" value=<%="#{c.nombre},#{c.sector}"%>><%="#{c.nombre} #{c.sector} "%> 
+					</br>
+				<%end%>
+			<%end%>
+		</div>
+
+		<div id="edad">
+		<h3>Rango de Edad</h3>
+			Desde: <input class="entry" id="desde" type="text" name="desde" /><br />
+			Hasta:&nbsp; <input class="entry" id="hasta" type="text" name="hasta" />
+		</div>
+	</fieldset>
+
+		
+
 		<input type="submit" name="buscar" value="buscar" />
 	</form>
-	</fieldset>
 </div>

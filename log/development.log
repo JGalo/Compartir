@@ -997,3 +997,997 @@ Started GET "/busqueda?educ%5B%5D=EDUC-01&buscar=buscar" for 127.0.0.1 at Fri Fe
   Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-01"]}
 Rendered listados/busqueda.html.erb within layouts/application (12.7ms)
 Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:10:11 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (29.2ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 351ms (Views: 82.1ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:10:59 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 65ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:15:12 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 262ms (Views: 239.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:16:58 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 81ms (Views: 51.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:17:35 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 55ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:19:03 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 84ms (Views: 52.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:19:22 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"]}
+Rendered listados/busqueda.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 57ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:20:05 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 84ms (Views: 63.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:20:24 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 56ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/busqueda?buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:20:28 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar"}
+Rendered listados/busqueda.html.erb within layouts/application (29.8ms)
+Completed   in 59ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    1: <ul>
+    2: 	<%@imprime.each do |i|%>
+    3: 		<li><%=i%></li>
+    4: 	<%end%>
+    5: 
+  app/views/listados/busqueda.html.erb:2:in `_app_views_listados_busqueda_html_erb__376779257__613173648_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (38.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (68.1ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:20:35 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"]}
+Rendered listados/busqueda.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:20:52 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 63ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:21:11 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 70ms (Views: 34.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=todo&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:21:15 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"]}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 274ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-01&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:21:19 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-01"]}
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 66ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=todo&educ%5B%5D=EDUC-01&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:21:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "EDUC-01"]}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 80ms (Views: 41.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:22:50 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 94ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:24:20 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 100ms (Views: 54.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:25:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 93ms (Views: 67.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:25:51 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 114ms (Views: 86.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:26:16 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 120ms (Views: 78.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:27:59 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (1.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 109ms (Views: 76.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:28:20 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (1.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 154ms (Views: 84.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:29:13 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (1.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 129ms (Views: 80.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:29:29 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 87ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:30:20 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 94ms (Views: 68.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:30:43 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 81ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-01&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:31:35 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-01"]}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 71ms (Views: 47.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-01&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:40:37 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-01"]}
+  [1m[35mEducador Load (0.5ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 122ms (Views: 64.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:42:30 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 74ms (Views: 46.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:43:02 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (210.7ms)
+Completed 200 OK in 257ms (Views: 228.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:43:06 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 61ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:43:26 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 77ms (Views: 46.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:44:24 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 119ms (Views: 73.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:44:40 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 81ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:44:52 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (1.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 97ms (Views: 50.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:45:08 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 72ms (Views: 46.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:45:24 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 63ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:45:51 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.4ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 64ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:46:03 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.5ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 82ms (Views: 41.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:47:27 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 57ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=todo&padrinazgo=ingresar&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:47:48 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"], "padrinazgo"=>"ingresar"}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 78ms (Views: 58.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:48:50 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 58ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:49:55 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 71ms (Views: 46.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:50:18 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.8ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 108ms (Views: 61.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:50:31 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 90ms (Views: 69.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:50:47 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 67ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:51:10 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 80ms (Views: 36.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:51:22 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 79ms (Views: 41.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:51:34 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 69ms (Views: 49.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:52:14 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 53ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:52:27 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 64ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:52:43 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 67ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:52:56 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 55ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:53:08 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 73ms (Views: 50.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:53:25 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 62ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:53:48 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 53ms (Views: 33.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:54:03 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 70ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:54:19 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 80ms (Views: 51.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:54:41 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 74ms (Views: 53.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 08:55:05 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 61ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=todo&padrinazgo=compartir&buscar=buscar" for 127.0.0.1 at Sat Feb 26 08:55:19 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"], "padrinazgo"=>"compartir"}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 60ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 09:43:07 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 147ms (Views: 35.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index?educ%5B%5D=todo&padrinazgo=ingresar&sexo=m&buscar=buscar" for 127.0.0.1 at Sat Feb 26 09:43:17 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"], "sexo"=>"m", "padrinazgo"=>"ingresar"}
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 90ms (Views: 59.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:39:26 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 127ms (Views: 84.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:39:43 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 77ms (Views: 43.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:39:55 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 84ms (Views: 63.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:40:09 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.6ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 61ms (Views: 41.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:40:16 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 59ms (Views: 41.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:41:51 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.4ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 86ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:42:05 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 189ms (Views: 115.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:42:16 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.5ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered listados/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 124ms (Views: 72.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/index?educ%5B%5D=todo&padrinazgo=partage&sexo=m&buscar=buscar" for 127.0.0.1 at Sat Feb 26 10:42:54 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"], "sexo"=>"m", "padrinazgo"=>"partage"}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered listados/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 74ms (Views: 37.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:45:54 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (8.4ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (56.4ms)
+Completed   in 172ms
+
+ActionView::Template::Error (undefined local variable or method `educador' for #<#<Class:0xb6d33a90>:0xb6d32b54>):
+    7: 		<div id="educador">
+    8: 		<h3>Educador</h3>
+    9: 		<input type="checkbox" class="educ" name="educ[]" value="todo">Todos los educadores</input></br>
+    10: 		<%unless educador.nil?%>
+    11: 			<%@educador.each do |e| %>
+    12: 				<input type="checkbox" class="educ" name="educ[]" value=<%=e.codigo%>><%="#{e.codigo} #{e.nombre} #{e.apellido}"%>  </input></br>
+    13: 			<%end%>
+  app/views/listados/index.html.erb:10:in `_app_views_listados_index_html_erb__421725523__613839368_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (27.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (51.1ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:46:06 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 202ms (Views: 32.6ms | ActiveRecord: 0.6ms)
+  [1m[36mCentro Load (0.4ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:57:53 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 95ms (Views: 45.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:58:43 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 150ms (Views: 86.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 10:59:15 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 115ms (Views: 51.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-01&padrinazgo=compartir&sexo=m&centro%5B%5D=Loarque%2C2&buscar=buscar" for 127.0.0.1 at Sat Feb 26 10:59:30 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-01"], "centro"=>["Loarque,2"], "sexo"=>"m", "padrinazgo"=>"compartir"}
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 108ms (Views: 57.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:03:02 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (5.5ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 141ms (Views: 70.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:03:14 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (1.1ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 118ms (Views: 65.7ms | ActiveRecord: 1.4ms)
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (4.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (4.0ms)[0m  describe `educadors`
+  [1m[36mAREL (0.8ms)[0m  [1mINSERT INTO `educadors` (`codigo`, `nombre`, `apellido`) VALUES ('EDUC-02', 'Jose Arnoldo', 'Flores Flores')[0m
+  [1m[35mSQL (35.6ms)[0m  COMMIT
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:09:34 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.7ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 193ms (Views: 118.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:11:02 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 111ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:11:29 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (284.8ms)
+Completed 200 OK in 384ms (Views: 310.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-02&padrinazgo=partage&sexo=m&centro%5B%5D=Loarque%2C2&buscar=buscar" for 127.0.0.1 at Sat Feb 26 11:12:37 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-02"], "centro"=>["Loarque,2"], "sexo"=>"m", "padrinazgo"=>"partage"}
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 112ms (Views: 46.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-02&padrinazgo=partage&sexo=m&centro%5B%5D=Loarque%2C2&buscar=buscar" for 127.0.0.1 at Sat Feb 26 11:13:14 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-02"], "centro"=>["Loarque,2"], "sexo"=>"m", "padrinazgo"=>"partage"}
+  [1m[35mEducador Load (0.5ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (91.7ms)
+Completed 200 OK in 199ms (Views: 149.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/index?educ%5B%5D=EDUC-01&padrinazgo=partage&sexo=m&centro%5B%5D=Loarque%2C2&buscar=buscar" for 127.0.0.1 at Sat Feb 26 11:13:27 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["EDUC-01"], "centro"=>["Loarque,2"], "sexo"=>"m", "padrinazgo"=>"partage"}
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 200ms (Views: 132.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:40:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 98ms (Views: 46.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:41:33 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 351ms (Views: 81.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:41:58 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 143ms (Views: 80.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 11:45:19 -0600 2011
+  Processing by NinoController#index as HTML
+  [1m[36mNino Load (4.8ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered nino/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 310ms (Views: 50.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 11:45:21 -0600 2011
+  Processing by NinoController#index as HTML
+  [1m[35mNino Load (0.9ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered nino/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 189ms (Views: 109.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:45:28 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (1.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (238.2ms)
+Completed 200 OK in 349ms (Views: 265.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:52:00 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (2.0ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (73.3ms)
+Completed 200 OK in 223ms (Views: 109.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:52:19 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 121ms (Views: 56.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:52:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (3.7ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 220ms (Views: 122.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 11:54:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (88.7ms)
+Completed 200 OK in 285ms (Views: 169.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 12:59:57 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 127ms (Views: 49.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:02:10 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.7ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 139ms (Views: 48.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:04:40 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 205ms (Views: 120.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index?desde=3&hasta=&buscar=buscar" for 127.0.0.1 at Sat Feb 26 13:04:49 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"3", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 138ms (Views: 72.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index?desde=3&hasta=&buscar=buscar" for 127.0.0.1 at Sat Feb 26 13:06:00 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"3", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 176ms (Views: 82.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/index?desde=3&hasta=&buscar=buscar" for 127.0.0.1 at Sat Feb 26 13:06:44 -0600 2011
+  Processing by ListadosController#index as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"3", "hasta"=>""}
+  [1m[36mEducador Load (2.1ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (4.5ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (56.7ms)
+Completed 200 OK in 203ms (Views: 83.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:06:48 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 311ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:07:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.8ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 128ms (Views: 57.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:07:59 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.6ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.5ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 235ms (Views: 101.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:11:48 -0600 2011
+  Processing by NinoController#index as HTML
+  [1m[36mNino Load (19.1ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered nino/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 130ms (Views: 44.0ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:12:02 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (2.2ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 143ms (Views: 56.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:13:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.6ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (1.4ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (72.5ms)
+Completed 200 OK in 240ms (Views: 121.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:16:03 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered listados/index.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 148ms (Views: 87.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:18:16 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 149ms (Views: 44.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:18:21 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.7ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.4ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 243ms (Views: 106.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:25:29 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (115.7ms)
+Completed   in 193ms
+
+ActionView::Template::Error (undefined local variable or method `index' for #<#<Class:0xb6ffb228>:0xb6ffa454>):
+    1: <ul>
+    2: 	<li><%= link_to index, {:controller => "listados", :action => "get"},{:title =>"Listados de niños" } %></li>
+    3: 	<li></li>
+    4: </ul>
+    5: 	
+  app/views/listados/busquedas.html.erb:2:in `_app_views_listados_busquedas_html_erb__158067464__612381698_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (18.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (52.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (98.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:25:51 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (21.4ms)
+Completed   in 79ms
+
+ActionView::Template::Error (No route matches {:action=>"get", :controller=>"listados"}):
+    1: <ul>
+    2: 	<li><%= link_to index_path, {:controller => "listados", :action => "get"},{:title =>"Listados de niños" } %></li>
+    3: 	<li></li>
+    4: </ul>
+    5: 	
+  app/views/listados/busquedas.html.erb:2:in `_app_views_listados_busquedas_html_erb__158067464__612980978_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (59.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (107.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:26:34 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:26:58 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:27:02 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 83ms (Views: 46.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:27:51 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 96ms (Views: 41.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:28:11 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.1ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (80.3ms)
+Completed 200 OK in 158ms (Views: 106.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:28:35 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:28:43 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 104ms (Views: 56.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:30:23 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (61.7ms)
+Completed 200 OK in 131ms (Views: 85.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:31:19 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 112ms (Views: 40.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Feb 26 13:46:10 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 96ms (Views: 78.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:46:14 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.5ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 84ms (Views: 43.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/index" for 127.0.0.1 at Sat Feb 26 13:49:44 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered listados/index.html.erb within layouts/application (53.3ms)
+Completed 200 OK in 211ms (Views: 108.7ms | ActiveRecord: 0.6ms)
