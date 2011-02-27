@@ -33,7 +33,8 @@ CREATE TABLE ninos(codigo varchar(10) NOT NULL,
 									nombreCentro varchar(30) NOT NULL,
 									nombreSector varchar(20) NOT NULL,
 									codigoEducador varchar(10),
-                  FOREIGN KEY (nombreCentro,nombreSector) REFERENCES centros(nombre,sector) ON UPDATE CASCADE,
+                  CONSTRAINT sexo_ck CHECK (sexo in('m','f')),
+									FOREIGN KEY (nombreCentro,nombreSector) REFERENCES centros(nombre,sector) ON UPDATE CASCADE,
                   FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo),
 									PRIMARY KEY (codigo)
 									) ENGINE=INNODB DEFAULT CHARSET=utf8;
