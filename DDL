@@ -28,7 +28,7 @@ CREATE TABLE accedes(
 CREATE TABLE educadors(codigo varchar(10) NOT NULL, 
                       nombre varchar(30),
 		                  apellido varchar(30),
-											idUsuario varchar(10) ,
+											idUsuario varchar(20) ,
 											FOREIGN KEY (idUsuario) REFERENCES usuarios(id) ON DELETE SET NULL,
 											PRIMARY KEY (codigo) 
 											) ENGINE=INNODB DEFAULT CHARSET=utf8;

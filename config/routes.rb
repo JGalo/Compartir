@@ -3,6 +3,7 @@ AsocCompartir::Application.routes.draw do
 	get "/educador" => "listados#educador"
 	get "/padrinos" => "listados#padrino"
 	get "/index" => "listados#index"
+	resources :ninos
 	root :to => "listados#busquedas"
 	# The priority is based upon order of creation:
   # first created -> highest priority.
