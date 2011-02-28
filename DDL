@@ -3,11 +3,36 @@ GRANT ALL ON asociacionCompartir.* TO compartir IDENTIFIED BY 'datos';
 FLUSH PRIVILEGES;
 USE asociacionCompartir;
 
+
+CREATE TABLE modulos( id varchar(5) NOT NULL,
+											descripcion text,
+											PRIMARY KEY (id)	
+										) ENGINE=INNODB CHARSET=utf8;
+
+CREATE TABLE usuarios(
+											id varchar(10) NOT NULL,
+											contrasena varchar(40) NOT NULL, 
+											acceso timestamp,
+											PRIMARY KEY(id)
+										)ENGINE=INNODB CHARSET=utf8;
+
+
+CREATE TABLE accedes(
+											idUsuario varchar(10) NOT NULL,
+											idModulo varchar(5) NOT NULL,
+											FOREIGN KEY (idUsuario) REFERENCES usuarios(id) ON DELETE CASCADE,
+											FOREIGN KEY (idModulo) REFERENCES modulos(id),
+											PRIMARY KEY (idUsuario,idModulo)
+										)ENGINE=INNODB CHARSET=utf8;
+
 CREATE TABLE educadors(codigo varchar(10) NOT NULL, 
                       nombre varchar(30),
 		                  apellido varchar(30),
+											idUsuario varchar(10) ,
+											FOREIGN KEY (idUsuario) REFERENCES usuarios(id) ON DELETE SET NULL,
 											PRIMARY KEY (codigo) 
 											) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE centros(nombre varchar(30) NOT NULL,
 										sector varchar(20) NOT NULL,
@@ -20,6 +45,7 @@ CREATE TABLE centros(nombre varchar(30) NOT NULL,
 CREATE TABLE padrinos(codigo varchar(10) NOT NULL,
 										 nombre varchar(50),
 										 nacionalidad varchar(30),
+										 titulo varchar(5),
 										 PRIMARY KEY (codigo)
 										) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
@@ -38,6 +64,15 @@ CREATE TABLE ninos(codigo varchar(10) NOT NULL,
                   FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo),
 									PRIMARY KEY (codigo)
 									) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE expedientes(
+						codigo varchar(10) NOT NULL,
+						fecha	date NOT NULL,
+						responsable varchar(40),
+						codigoNino varchar(10) NOT NULL,
+						FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
+						PRIMARY KEY (codigo)
+						)ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE apadrinas(
 						codigoNino varchar(10) NOT NULL,
@@ -74,6 +109,15 @@ CREATE TABLE familiars(
 					PRIMARY KEY (nombre, apellido)
 					) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
+CREATE TABLE antecedente_salud
+				(
+				  nombre varchar(30) NOT NULL,
+					apellido varchar(30) NOT NULL,
+					enfermedad varchar(30) NOT NULL,
+					FOREIGN KEY (nombre,apellido) REFERENCES familiars(nombre,apellido) ON DELETE CASCADE ON UPDATE CASCADE,
+					PRIMARY KEY (nombre,apellido,enfermedad)
+				) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
 CREATE TABLE beneficios(
 				  codigoNino	varchar(10) NOT NULL, 
 					tipoBeneficio varchar(30) NOT NULL,
@@ -91,6 +135,7 @@ CREATE TABLE situacion_academicas(
 				grado char(2),
 				indice decimal(5,2),
 				observacion text,
+				centro varchar(30),
         FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
 				PRIMARY KEY (codigoNino,anio)
 				) ENGINE=INNODB DEFAULT CHARSET=utf8;
@@ -118,14 +163,187 @@ CREATE TABLE esfamiliars(
         nombreFamiliar varchar(30) NOT NULL,
 				apellidoFamiliar varchar(30) NOT NULL,
         FOREIGN KEY (codigoNino) REFERENCES ninos(codigo),
-        FOREIGN KEY (nombreFamiliar,apellidoFamiliar) REFERENCES familiars(nombre,apellido) ON DELETE CASCADE,
+        FOREIGN KEY (nombreFamiliar,apellidoFamiliar) REFERENCES familiars(nombre,apellido) ON DELETE CASCADE ON UPDATE CASCADE,
         PRIMARY KEY (codigoNino,nombreFamiliar,apellidoFamiliar)
 
-        ) ENGINE = INNODB DEFAULT CHARSET=utf8;
+        ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE telefono_educadors(
        codigoEducador varchar(10) NOT NULL,
        telefono varchar(16) NOT NULL,
-       FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo) ON DELETE CASCADE,
+       FOREIGN KEY (codigoEducador) REFERENCES educadors(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
        PRIMARY KEY (codigoEducador,telefono)
-       ) ENGINE = INNODB DEFAULT CHARSET=utf8;
+       ) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE expediente_descriptivos(
+			codigoExpediente varchar(10) NOT NULL,
+			drogas text DEFAULT NULL,
+			fumador boolean DEFAULT FALSE,
+			alcohol boolean DEFAULT FALSE,
+			tatuajes text DEFAULT NULL,
+			descripcionAmigos text,
+			descripcionActual text,
+			descripcionActualAmigos text,
+			observaciones	text,
+			FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+			PRIMARY KEY (codigoExpediente)
+		) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE expediente_viviendas(
+		codigoExpediente varchar(10) NOT NULL,
+		cantidadCuartos smallint ,
+		material varchar(40),
+		antiguedad smallint,
+		propietario varchar(30),
+		luz	varchar(15),
+		agua varchar(15),
+		FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente)
+	)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE componente_viviendas(
+		codigoExpediente varchar(10) NOT NULL,
+		nombre varchar(15) NOT NULL,
+		revision date NOT NULL,
+		condicion varchar(7) NOT NULL, 
+		observacion text,
+		FOREIGN KEY (codigoExpediente) REFERENCES expediente_viviendas(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente,nombre,revision)
+		)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE expediente_familiar(
+	codigoExpediente varchar(10) NOT NULL,
+	familiaMaterna text,
+	entreHermanos text,
+	entreHijos text,
+	familiaPaterna text,
+	padreHijo text,
+	padres text,
+	FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+	PRIMARY KEY (codigoExpediente)
+)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE expediente_juridico(		
+	     codigoExpediente varchar(10) NOT NULL,
+			 inscritoRNP boolean DEFAULT TRUE,
+			 reconodicoPor varchar(15),
+			 maltratoFisico text,
+			 contactoEmergencia varchar(60),
+			 problemaSobreNombre boolean DEFAULT FALSE,
+			 descripcionNoInscrito text,
+			 maltratadoPor text,
+			 victimaViolacion boolean,
+			 auxilioExterno text,
+       FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+	     PRIMARY KEY (codigoExpediente)
+			) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE expediente_salud(
+	
+	     codigoExpediente varchar(10) NOT NULL,
+			 TipoParto varchar(30), 
+			 TipoNacimiento varchar(30),
+			 EmbarazoControlado boolean DEFAULT TRUE, 
+			 SaludActual text,
+       FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+	     PRIMARY KEY (codigoExpediente)
+
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE problemas_congenitos(
+    codigoExpediente varchar(10) NOT NULL,
+		problema varchar(30) NOT NULL,
+    FOREIGN KEY (codigoExpediente) REFERENCES expediente_salud(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente,problema)
+	) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE accidentes_sufridos(
+    codigoExpediente varchar(10) NOT NULL,
+		accidente varchar(30) NOT NULL,
+    FOREIGN KEY (codigoExpediente) REFERENCES expediente_salud(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente,accidente)
+	) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE enfermedades(
+    codigoExpediente varchar(10) NOT NULL,
+		enfermedad varchar(30) NOT NULL,
+    FOREIGN KEY (codigoExpediente) REFERENCES expediente_salud(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente,enfermedad)
+	) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE expediente_educativo(	
+	     codigoExpediente varchar(10) NOT NULL,
+			 descripcionNoAsistenciaPre text DEFAULT NULL,
+			 edadIngresoPre smallint,
+			 edadEgresoPre smallint,
+			 nombrePrescolar varchar(50),
+			 edadIngresoPrim smallint,
+			 edadEgresoPrim smallint,
+			 nombrePrimaria varchar(50),
+			 descripcionNoAsistenciaPri text DEFAULT NULL,
+			 clasesFavoritas text,
+			 descripcionesExpulsiones text,
+			 des_Inasistencia text,
+			 clasesDificultad text,
+			 oficio varchar(50),
+			 club varchar(50),
+			 diversion text,
+			 carrera varchar(40),
+			 cursoDiversificado smallint,
+			 cursoAprobado smallint,
+			 asisteSecundaria boolean DEFAULT FALSE,
+			 descripcionNoAsistenciaSecundaria text,
+			 FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+	     PRIMARY KEY (codigoExpediente)
+
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE expediente_trabajo(	
+	     codigoExpediente varchar(10) NOT NULL,
+			 empleador varchar(25),
+			 lugarTrabajo varchar(50),
+			 formaPago varchar(7),
+			 contrato varchar(30),
+			 diasLaborales varchar(15),
+			 horaEntrada time,
+			 horaSalida time,
+			 salario decimal(10,2),
+			 trabajoPeligroso boolean DEFAULT FALSE,
+			 acompanante varchar(50),
+			 motivosAbandonoHogar text,
+			 relacionesCompaneros text,
+			 aspiraciones text,
+			 habilidades text,
+       FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
+	     PRIMARY KEY (codigoExpediente)
+)ENGINE=INNODB  DEFAULT CHARSET=utf8;
+
+CREATE TABLE gastos_trabajo(
+		codigoExpediente varchar(10) NOT NULL,
+		gastos varchar(30) NOT NULL,
+		FOREIGN KEY (codigoExpediente) REFERENCES expediente_trabajo(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente)
+	)ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE experiencia_laboral(
+		codigoExpediente varchar(10) NOT NULL,
+		experiencia varchar(30) NOT NULL,
+		FOREIGN KEY (codigoExpediente) REFERENCES expediente_trabajo(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente)
+		
+	)ENGINE INNODB DEFAULT CHARSET=utf8;
+
+CREATE TABLE trabajos_anteriores(
+		codigoExpediente varchar(10) NOT NULL,
+		trabajos varchar(30) NOT NULL,
+		FOREIGN KEY (codigoExpediente) REFERENCES expediente_trabajo(codigoExpediente) ON DELETE CASCADE ON UPDATE CASCADE,
+		PRIMARY KEY (codigoExpediente)
+
+	)ENGINE INNODB DEFAULT CHARSET=utf8;
+
