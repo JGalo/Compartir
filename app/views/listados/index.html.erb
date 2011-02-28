@@ -47,9 +47,15 @@
 			Hasta:&nbsp; <input class="entry" id="hasta" type="text" name="hasta" />
 		</div>
 	</fieldset>
-
-		
-
 		<input type="submit" name="buscar" value="buscar" />
 	</form>
 </div>
+
+<table>
+<tr> <th>codigo</th><th> nombre</th><th> apellido</th><th>Padrinazgo</th><th>Fecha Nacimiento</th><th>sexo</th>
+		 <th>habita Con</th><th>Centro</th><th>Educador</th>
+</tr>
+<%@ninos.each do |nino|%>
+		<td><%=nino.codigo%></td><td><%=nino.nombre%></td><td><%=nino.apellido%></td><td><%=nino.estadoPadrinazgo%></td><td><%=nino.fechaNac%></td><td><%=nino.sexo%></td><td><%=nino.habitaCon%></td><td><%="#{nino.nombreCentro} #{nino.nombreSector}"%></td><td><%=nino.codigoEducador%></td>
+<%end%>
+</table>
