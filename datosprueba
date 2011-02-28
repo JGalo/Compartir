@@ -1,0 +1,13 @@
+INSERT INTO modulos VALUES ('A0001', 'Accesso completo a todo'), ('A0002','acceso a propios ninos'), ('A0003', 'acceso a los expedientes solamente'), ('A0004', 'acceso a centros especificos'), ('A0005', 'acceso a todos los centros');
+
+INSERT INTO usuarios(id,contrasena) VALUES ('Administrador01', MD5('compartir01')), ('Administrador02', MD5('compartir02')), ('Educador01', MD5('compartir03')),('Educador02', MD5('compartir04')), ('Educador03', MD5('compartir05')), ('Educador04', MD5('compartir06')), ('Educador05',MD5('compartir07')), ('Educador06', MD5('compartir08')), ('Educador07', MD5('compartir09')), ('Educador08', MD5('compartir10'));
+
+INSERT INTO accedes VALUES ('Administrador01', 'A0001'), ('Educador06', 'A0002'), ('Educador03', 'A0003'), ('Educador04', 'A0004'), ('Educador05', 'A0005'), ('Educador06', 'A0005'), ('Educador07', 'A0004'), ('Educador08', 'A0003');
+
+INSERT INTO educadors VALUES ('E00001', 'Luis', 'Medina', 'educador01'), ('E00002', 'Carlos', 'Almendarez', 'educador02'), ('E00003', 'Rosa', 'Nuñez', 'educador03'), ('E00004', 'Marilyn', 'Argueta', 'educador04'), ('E00005', 'Carlos', 'Erazo', 'educador05'), ('E00006', 'Carmen', 'Guzman', 'educador06'), ('E00007', 'Reina', 'Flores', 'educador07'), ('E00008', 'Josue', 'Rodriguez', 'educador08');
+
+INSERT INTO centros VALUES ('Villa Nueva', 'Sector 1', 'E00001'), ('Villa Nueva', 'Sector 2', 'E00003'), ('Los Pinos', 'Sector 1', 'E00005'), ('Nueva Suyapa', 'Sector 1', 'E00007');
+
+INSERT INTO padrinos VALUES ('2711001', 'Luis Ramirez', 'Hondureña', 'Sr'), ('2711002', 'Isabelle Aubret', 'Francesa', 'Sra'), ('2711003', 'Francois Audrain', 'Francesa', 'Sr'), ('2711004', 'Charles Aznavour', 'Francesa', 'Sr'), ('2711005', 'Dominique Badi', 'Francesa', 'Sr'), ('2711006', 'Pierre Balavoine', 'Francesa', 'Sr'), ('2711007', 'Jeane Aufray', 'Francesa', 'Sra'), ('2711008', 'Lucienne Boyer', 'Francesa', 'Sr'), ('2711009', 'Chevalier de Maurice', 'Francesa', 'Sr'), ('2711010', 'Marie Dubas', 'Francesa', 'Sra');
+
+INSERT INTO ninos VALUES ('128901', 'Carlos Andrés', 'Rodriguez Martinez', 'Padrinazgo Partage', '2000-12-1', 'm', 'Madre', 'Villa Nueva', 'Sector 1', 'E00001'), ('128902', 'Martha Maria', 'Pacheco Mendoza', 'Padrinazgo Partage', '2001-11-4', 'f', 'Madre, Padre y 2 hermanos', 'Villa Nueva', 'Sector 1', 'E00001'), ('128903', 'Mario Alberto', 'Sierra Ordoñez', 'Padrinazgo Compartir', '1998-14-10', 'm', 'Madre, Padre y 1 hermana', 'Villa Nueva', 'Sector 1', 'E00001'), ('128904', 'Monica Alejandra', 'Fiallos', 'Padrinazgo Compartir', '2001-10-4', 'f', 'Madre y Padre', 'Villa Nueva', 'Sector 1', 'E00001');

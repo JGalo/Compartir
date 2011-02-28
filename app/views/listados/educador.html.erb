@@ -1,0 +1,17 @@
+<table>
+<tr> <th>Nombre</th><th> Sector</th><th>codigoAdministrador</th>
+</tr>
+<%@centro.each do |centro|%>
+		<tr><td><%=centro.nombre%></td><td><%=centro.sector%></td><td><%=centro.codigoAdministrador%></td>
+		</tr>
+<%end%>
+</table>
+
+<table>
+<tr> <th>Codigo</th><th> Nombre</th><th> Apellido</th>
+</tr>
+<%@educador.each do |educador|%>
+		<tr><td><%=educador.codigo%></td><td><%=educador.nombre%></td><td><%=educador.apellido%></td>
+		</tr>
+<%end%>
+</table>
