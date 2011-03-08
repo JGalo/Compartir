@@ -1,0 +1,10 @@
+/*CREATE VIEW administradores AS (select centros.nombre,centros.sector, educadors.nombre as educador,educadors.apellido FROM centros INNER JOIN educadors ON centros.codigoAdministrador = educadors.codigo);
+
+CREATE VIEW ninosInterrupcion AS (SELECT ninos.codigo, ninos.nombre, ninos.apellido, apadrinas.fechaInterrupcion FROM (padrinos INNER JOIN apadrinas ON padrinos.codigo = apadrinas.codigoPadrino) INNER JOIN ninos ON ninos.codigo = apadrinas.codigoNino WHERE apadrinas.fechaInterrupcion IS NOT NULL);
+
+CREATE VIEW ninosTrabajan AS (SELECT ninos.codigo, ninos.nombre,ninos.apellido, expediente_trabajo.empleador, expediente_trabajo.salario, expediente_trabajo.lugarTrabajo FROM (ninos INNER JOIN expedientes ON expedientes.codigoNino = ninos.codigo) INNER JOIN expediente_trabajo ON expedientes.codigo = expediente_trabajo.codigoExpediente WHERE expediente_trabajo.empleador IS NOT NULL);
+*/
+CREATE VIEW ninosPorIngresar AS (SELECT * from ninos where estadoPadrinazgo = 'Por Ingresar');
+/*
+CREATE VIEW edades AS (SELECT ninos.nombre,ninos.fechaNac, (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS age FROM ninos);
+*/

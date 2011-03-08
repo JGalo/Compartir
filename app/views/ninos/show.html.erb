@@ -1,1 +1,36 @@
- <%=@nino.nombre%> 
+<h2 id="cabecera">Datos de Niño</h2>
+
+<img  src="http://compartirhonduras.org/images/1.jpg">
+<a id="ninoCodigo">Codigo:<%=@nino.codigo%></a>
+<a id="ninoEdad">Edad: <%=@edad[0]%></a>
+<a id="ninoNombre">Nombre: <%=@nino.nombre%></a> 
+<a id="ninoSexo">Sexo: <%=@nino.sexo%></a>
+<a id="ninoEducador">Educador:<%=@nino.codigoEducador%></a>
+<a id="ninoSector"><%=@nino.nombreSector%></a>
+<a id="ninoBarrio">Barrio:<%=@nino.nombreCentro%></a>
+<a id="ninoPadrinazgo">Estado Padrinazgo: <%=@nino.estadoPadrinazgo%> </a>
+<div id="descripcion">
+	<h3>Descripción del niño</h3>
+	<p>Es un niño muy alegre y trabajador. Se lleva bien con todos a quienes conoce. Le gusta trabajar con manualidades y deportes como el fútbol.<p>
+</div>
+
+<div id="vivienda">
+<table>
+	<h3>Datos Vivienda</h3>
+	<tr><th>Fecha</th><th>Componente</th><th>Condicion</th><th>Observacion</th>
+	</tr>
+	<tr><td>01-11-2010</td><td>Piso</td><td>Bueno</td><td>Dañado en ciertos lugares</td>
+	</tr>
+</table>
+</div>
+
+<div id="escolar">
+<table>
+	<h3>Situación Academica</h3>
+	 <tr><th>Año</th><th>Grado</th><th>Centro</th><th>Indice</th><th>Observacion</th>
+	   </tr>
+	<tr><td>2007</td><td>Segundo</td><td>Republica Costa Rica</td><td>78</td><td>Es inquieto</td>
+</tr>
+
+</table>
+</div>

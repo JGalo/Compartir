@@ -9,6 +9,8 @@ class NinosController < ApplicationController
 	end
 
 	def show
-		@nino = Nino.find_by_codigo(params[:id])
+		codigo = params[:id]
+		@nino = Nino.find_by_codigo(codigo)
+		@edad = Nino.edad_Nino(codigo)
 	end
 end

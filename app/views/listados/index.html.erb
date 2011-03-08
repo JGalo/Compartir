@@ -46,6 +46,16 @@
 			Desde: <input class="entry" id="desde" type="text" name="desde" /><br />
 			Hasta:&nbsp; <input class="entry" id="hasta" type="text" name="hasta" />
 		</div>
+
+
+		<div id="programa">
+		<h3>Programa</h3>
+		<%unless @programas.nil?%>
+			<%@programas.each do |programa|%>
+			 <input type="checkbox" class="programa" name="programa[]" value=<%="#{programa[0]}"%>><%="#{programa[0]}"%> </input></br>	
+			<%end%>
+		<%end%>
+		</div>
 	</fieldset>
 		<input type="submit" name="buscar" value="buscar" />
 	</form>

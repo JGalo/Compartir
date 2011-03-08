@@ -1,0 +1,61 @@
+<div id="wrapper">
+	<div id="page">
+		<div id="content">
+			<div class="post">
+				<h2 class="title"><a href="#">Gestion de Niños</a></h2>
+				<div class="entry">
+				<h1>Situacion Academica</h1>
+
+
+<FORM ACTION="/situacion_academica" METHOD="POST">
+
+<label for="code">Codigo del Niño:</label><br/>
+<INPUT id = "code" TYPE="text" NAME="code" class=":required :integer"><br/>
+
+<label for="code">Año:</label><br/>
+<INPUT id = "code" TYPE="text" NAME="anio" class=":required :year"><br/>
+ 
+<label for="nombre">Grado:</label><br/>
+<INPUT id = "nombre" TYPE="text" NAME="grado" class=":required"><br/>
+ 
+<label for="apellido">Indice:</label><br/>
+<INPUT id = "apellido" TYPE="text" NAME="indice" class=":required"><br/>
+ 
+<label for="padrinazgo">Observacion:</label><br/>
+<INPUT id = "padrinazgo" TYPE="text" NAME="observacion" class=":required"><br/> 
+
+<label for="fecha">Centro:</label><br/>
+<INPUT id = "fecha" TYPE="text" NAME="centro" class=":required :date"><br/>
+
+
+<INPUT TYPE="submit" value="Crear">
+</FORM> 
+
+				</div>
+			</div>
+		
+			
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+			<li>
+					<h2>Operaciones</h2>
+					<ul>
+						<li><a href="/ninoform">Ingresar un Niño</a></li>
+						<li><a href="/acaform">Situacion Academica</a></li>
+						<li><a href="/famform">Ingresar Familiar</a></li>
+						<li><a href="/vivi">Expediente Vivienda</a></li>
+						<li><a href="/juri">Expediente Juridico</a></li>
+						<li><a href="/salu">Expediente Salud</a></li>
+					</ul>
+				</li>
+			</ul>	
+				
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+

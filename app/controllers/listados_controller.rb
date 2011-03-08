@@ -3,6 +3,7 @@ class ListadosController < ApplicationController
 		@educador = Educador.all
 		@centros = Centro.all
 		@ninos = Nino.all
+		@programas = Programa.buscar_distintos
 	end
 	def educador
 		@educador = Educador.all

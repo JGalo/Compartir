@@ -30,4 +30,14 @@ class Nino < ActiveRecord::Base
 		end
 		filas
 	end
+
+
+	def self.edad_Nino(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS age FROM ninos WHERE ninos.codigo='#{codigo}'")
+	s.each do |row|
+		filas << row[0]
+	end
+	filas
+	end
 end

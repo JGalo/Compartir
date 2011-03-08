@@ -235,3 +235,13 @@ INSERT INTO expediente_trabajo VALUES
  ('EXP00033', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'False', NULL, NULL, NULL, NULL, NULL),
  ('EXP00034', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'False', NULL, NULL, NULL, NULL, NULL),
  ('EXP00035', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'False', NULL, NULL, NULL, NULL, NULL);
+
+
+INSERT INTO apadrinas VALUES ('12008901', '2711001','2001-11-10',NULL,'Padrinazgo Compartir'),
+('12008902', '2711002','2002-8-12','2004-6-8','Padrinazgo Partage'),
+('12008903', '2711003','1990-10-10',NULL,'Otro Padrinazgo');
+
+INSERT INTO programas VALUES ('educacion','reforzamiento escolar'),
+('educacion','computacion'),
+('participacion','reforestacion'),
+('integracion','iglesia');

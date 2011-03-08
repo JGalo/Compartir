@@ -142,14 +142,14 @@ CREATE TABLE situacion_academicas(
 
 CREATE TABLE programas(
 				tipo varchar(20) NOT NULL,
-				componente varchar(20) NOT NULL,
+				componente varchar(30) NOT NULL,
 				PRIMARY KEY (tipo,componente)
 			) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 CREATE TABLE participas(
 				codigoNino varchar(10) NOT NULL,
 				tipoPrograma varchar(20) NOT NULL,
-				componentePrograma varchar(20) NOT NULL,
+				componentePrograma varchar(30) NOT NULL,
         fechaInic date,
         fechaFinal date,
         resultado text,
