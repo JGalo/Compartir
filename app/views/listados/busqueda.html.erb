@@ -1,6 +1,79 @@
-<ul>
-	<%@imprime.each do |i|%>
-		<li><%=i%></li>
-	<%end%>
+<div class="busqueda">
 
-</ul>
+	<form id="seleccion" action="/busqueda" method="get">
+	<fieldset>
+	<legend>Criterios de busqueda</legend>
+
+		<div id="educador">
+		<h3>Educador</h3>
+		<input id="todosEducadores" type="checkbox" class="educ" name="educ[]" value="todo">Todos los educadores</input></br>
+		<%unless @educador.nil?%>
+			<%@educador.each do |e| %>
+				<input id=<%=e.codigo%> type="checkbox" class="educ" name="educ[]" value=<%=e.codigo%>><%="#{e.codigo} #{e.nombre} #{e.apellido}"%>  </input></br>
+			<%end%>
+		<%end%>
+		</div>	
+	
+		<div id="padrinazgo">
+		<h3>Tipo Padrinazgo</h3>
+			<input type="radio" value="ingresar" name="padrinazgo">Padrinazgo por ingresar </input></br>
+			<input type="radio" value="compartir" name="padrinazgo">Padrinazgo compartir</input></br>
+			<input type="radio" value="partage" name="padrinazgo">Padrinazgo partage </input></br>
+			<input type="radio" value="otros" name="padrinazgo">Otros padrinazgos </input></br>
+			<input type="radio" value="interrupcion" name="padrinazgo">Interrupcion padrinazgo</input></br>
+			<input type="radio" value="propuestos" name="padrinazgo">Propuestos para egresos</input></br>
+			<input type="radio" value="egresados" name="padrinazgo">Egresados</input></br>
+		</div>
+
+		<div id="sexo">
+		<h3>Sexo</h3>
+			<input type="radio" value="m" name="sexo">masculino</input></br>
+			<input type="radio" value="f" name="sexo">femenino</input></br>
+		</div>
+
+		<div id="centro">
+			<h3>Centro</h3>
+			<%unless @centros.nil?%>
+				<%@centros.each do |c|%>
+				 	<input type="checkbox" class="cent" name="centro[]" value=<%="#{c.nombre},#{c.sector}"%>><%="#{c.nombre} #{c.sector} "%> 
+					</br>
+				<%end%>
+			<%end%>
+		</div>
+
+		<div id="programa">
+		<h3>Programa</h3>
+		<%unless @programas.nil?%>
+			<%@programas.each do |programa|%>
+			 <input type="checkbox" class="programa" name="programa[]" value=<%="#{programa[0]}"%>><%="#{programa[0]}"%> </input></br>	
+			<%end%>
+		<%end%>
+		</div>
+		<div id="fechaActivo">
+		<h3>Fecha</h3>
+			Desde: <input class="fecha" id="desde" type="text" name="desde" /><br />
+			Hasta:&nbsp; <input class="fecha" id="hasta" type="text" name="hasta" />
+		</div>
+
+		<div id="edad">
+		<h3>Rango de Edad</h3>
+			Desde: <input class="edad" id="desde" type="text" name="desde" /><br />
+			Hasta:&nbsp; <input class="edad" id="hasta" type="text" name="hasta" />
+		</div>
+
+
+	
+	</fieldset>
+		<input type="submit" name="buscar" value="buscar" />
+	</form>
+</div>
+
+<table>
+<tr> <th>Codigo</th><th> Nombre</th><th> Apellido</th><th>Padrinazgo</th><th>Edad</th><th>sexo</th>
+		 <th>Vive con</th><th>Centro</th><th>Educador</th><th>Grado Escolar</th>
+</tr>
+<%@ninos.each do |nino|%>
+		<tr><td><%=link_to nino.codigo,nino_path(nino.codigo)%></td><td><%=nino.nombre%></td><td><%=nino.apellido%></td><td><%=nino.estadoPadrinazgo%></td><td><%=nino.fechaNac%></td><td><%=nino.sexo%></td><td><%=nino.habitaCon%></td><td><%="#{nino.nombreCentro} #{nino.nombreSector}"%></td><td><%=nino.codigoEducador%></td>
+		</tr>
+<%end%>
+</table>

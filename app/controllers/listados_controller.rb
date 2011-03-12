@@ -1,5 +1,6 @@
 class ListadosController < ApplicationController
-	def index
+	def busqueda
+	  p params
 		@educador = Educador.all
 		@centros = Centro.all
 		@ninos = Nino.all

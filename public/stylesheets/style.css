@@ -116,7 +116,7 @@ hr {
 	width: 960px;
 	height: 80px;
 	margin: 0px auto;
-	background: url(images/logo1.png) no-repeat left top;
+	background: url(public/images/logo1.jpg) no-repeat left top;
 }
 
 /** LOGO */
@@ -151,7 +151,7 @@ hr {
 	width: 960px;
 	height: 48px;
 	margin: 0px auto;
-	background: url(images/img03.jpg) no-repeat left top;
+	background: url(public/images/img03.jpg) no-repeat left top;
 }
 
 #menu ul {
@@ -184,7 +184,7 @@ hr {
 }
 
 #menu .first a {
-	background: #000000 url(images/img04.jpg) no-repeat left top;
+	background: #000000 url(public/images/img04.jpg) no-repeat left top;
 	color: #FFFFFF;
 }
 
@@ -202,7 +202,7 @@ hr {
 	float: left;
 	width: 610px;
 	padding-right: 30px;
-	background: url(images/img06.jpg) repeat-y right top;
+	background: url(public/images/img06.jpg) repeat-y right top;
 }
 
 /** SIDEBAR */
@@ -235,7 +235,7 @@ hr {
 
 .post {
 	margin-bottom: 20px;
-	background: url(images/img05.jpg) repeat-x left bottom;
+	background: url(public/images/img05.jpg) repeat-x left bottom;
 }
 
 .post .title {

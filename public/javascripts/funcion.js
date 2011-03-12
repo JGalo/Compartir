@@ -17,5 +17,20 @@ $(document).ready(function (){
 			}
 		}
 	);
+
+	$(".educ").click(function(event){ 
+					if(event.target.id == "todosEducadores"){ 
+								
+								 $(".educ").each( function(elemento){
+										elem.checked = false				 
+										}
+								  );
+								
+								 
+								 //elem.checked = false;
+					} 
+			}
+	);
+	
 	}
 );

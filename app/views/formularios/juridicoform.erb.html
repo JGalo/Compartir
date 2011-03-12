@@ -1,0 +1,85 @@
+<div id="wrapper">
+	<div id="page">
+		<div id="content">
+			<div class="post">
+				<h2 class="title"><a href="#">Gestion de Niños</a></h2>
+				<div class="entry">
+				<h1>Expediente Juridico</h1>	
+
+
+<FORM ACTION="/nino" METHOD="POST">
+<label for="sexo">Inscrito RPN:</label><br/>
+<SELECT NAME="sexo" class=":required"> 
+   <OPTION VALUE="M">SI</OPTION> 
+   <OPTION VALUE="F">NO</OPTION> 
+</SELECT> 
+<br/>
+
+<label for="code">Reconocido Por:</label><br/>
+<INPUT id = "code" TYPE="text" NAME="code" class=":required :integer"><br/>
+ 
+<label for="sexo">Maltrato Fisico:</label><br/>
+<SELECT NAME="sexo" class=":required"> 
+   <OPTION VALUE="M">SI</OPTION> 
+   <OPTION VALUE="F">NO</OPTION> 
+</SELECT> 
+<br/>
+<label for="apellido">Llamar en caso de emergencia:</label><br/>
+<INPUT id = "apellido" TYPE="text" NAME="apellido" class=":required"><br/>
+
+<label for="sexo">Problemas con el nombre:</label><br/>
+<SELECT NAME="sexo" class=":required"> 
+   <OPTION VALUE="M">SI</OPTION> 
+   <OPTION VALUE="F">NO</OPTION> 
+</SELECT> 
+<br/>
+
+<label for="habita">Descripcion no inscrito:</label><br/>
+<textarea name="habita" rows="5" cols="25" class=":required"></textarea><br/>
+
+<label for="habita">Maltratado por:</label><br/>
+<textarea name="habita" rows="5" cols="25" class=":required"></textarea><br/>
+
+<label for="habita">Descripcion no inscrito:</label><br/>
+<textarea name="habita" rows="5" cols="25" class=":required"></textarea><br/>
+
+<label for="sexo">Victima Violacion:</label><br/>
+<SELECT NAME="sexo" class=":required"> 
+   <OPTION VALUE="M">SI</OPTION> 
+   <OPTION VALUE="F">NO</OPTION> 
+</SELECT> 
+<br/>
+
+<label for="habita">Auxilio Externo:</label><br/>
+<textarea name="habita" rows="5" cols="25" class=":required"></textarea><br/>
+
+<INPUT TYPE="submit" value="Generar">
+</FORM> 
+
+				</div>
+			</div>
+		
+			
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+			<li>
+					<h2>Operaciones</h2>
+					<ul>
+						<li><a href="/ninoform">Ingresar un Niño</a></li>
+						<li><a href="/acaform">Situacion Academica</a></li>
+						<li><a href="/famform">Ingresar Familiar</a></li>
+						<li><a href="/vivi">Expediente Vivienda</a></li>
+						<li><a href="/juri">Expediente Juridico</a></li>
+						<li><a href="/salu">Expediente Salud</a></li>
+					</ul>
+				</li>
+			</ul>	
+				
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>

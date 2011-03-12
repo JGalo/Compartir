@@ -4883,3 +4883,867 @@ ActionController::RoutingError (No route matches "/stylesheets/images/img04.jpg"
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:40:11 -0600 2011
+  Processing by ListadosController#busquedas as HTML
+Rendered listados/busquedas.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/logo1.png" for 127.0.0.1 at Thu Mar 10 19:40:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.5ms)
+
+
+Started GET "/stylesheets/images/img03.jpg" for 127.0.0.1 at Thu Mar 10 19:40:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/stylesheets/images/img04.jpg" for 127.0.0.1 at Thu Mar 10 19:40:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/stylesheets/images/img06.jpg" for 127.0.0.1 at Thu Mar 10 19:40:13 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img06.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/stylesheets/images/img05.jpg" for 127.0.0.1 at Thu Mar 10 19:40:13 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img05.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/index" for 127.0.0.1 at Thu Mar 10 19:40:25 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (29.0ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.8ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (1.2ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/index.html.erb within layouts/application (182.5ms)
+Completed 200 OK in 841ms (Views: 217.9ms | ActiveRecord: 31.7ms)
+
+
+Started GET "/stylesheets/images/logo1.png" for 127.0.0.1 at Thu Mar 10 19:40:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/stylesheets/images/img03.jpg" for 127.0.0.1 at Thu Mar 10 19:40:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.6ms)
+
+
+Started GET "/stylesheets/images/img04.jpg" for 127.0.0.1 at Thu Mar 10 19:40:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.1ms)
+
+
+Started GET "/index" for 127.0.0.1 at Thu Mar 10 19:43:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/index"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:44:43 -0600 2011
+  Processing by ListadosController#index as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/index.html.erb within layouts/application (180.6ms)
+Completed 200 OK in 425ms (Views: 200.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stylesheets/images/logo1.png" for 127.0.0.1 at Thu Mar 10 19:44:45 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/stylesheets/images/img03.jpg" for 127.0.0.1 at Thu Mar 10 19:44:45 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/stylesheets/images/img04.jpg" for 127.0.0.1 at Thu Mar 10 19:44:45 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (14.5ms)
+
+
+Started GET "/busquedas" for 127.0.0.1 at Thu Mar 10 19:44:53 -0600 2011
+
+ActionController::RoutingError (No route matches "/busquedas"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/listados" for 127.0.0.1 at Thu Mar 10 19:45:09 -0600 2011
+
+AbstractController::ActionNotFound (The action 'busquedas' could not be found for ListadosController):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (2.1ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 17:43:29 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (13.7ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.6ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (1.1ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (609.7ms)
+Completed   in 883ms
+
+ActionView::Template::Error (undefined method `nino_path' for #<#<Class:0xb6d9a77c>:0xb6d995ac>):
+    66: 		 <th>Vive con</th><th>Centro</th><th>Educador</th>
+    67: </tr>
+    68: <%@ninos.each do |nino|%>
+    69: 		<tr><td><%=link_to nino.codigo,nino_path(nino.codigo)%></td><td><%=nino.nombre%></td><td><%=nino.apellido%></td><td><%=nino.estadoPadrinazgo%></td><td><%=nino.fechaNac%></td><td><%=nino.sexo%></td><td><%=nino.habitaCon%></td><td><%="#{nino.nombreCentro} #{nino.nombreSector}"%></td><td><%=nino.codigoEducador%></td>
+    70: 		</tr>
+    71: <%end%>
+    72: </table>
+  app/views/listados/busqueda.html.erb:69:in `_app_views_listados_busqueda_html_erb__376779257__613629968_0'
+  app/views/listados/busqueda.html.erb:68:in `each'
+  app/views/listados/busqueda.html.erb:68:in `_app_views_listados_busqueda_html_erb__376779257__613629968_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (125.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (144.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 11 17:47:18 -0600 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.5ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 17:47:20 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (157.7ms)
+Completed 200 OK in 328ms (Views: 170.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stylesheets/images/logo1.png" for 127.0.0.1 at Fri Mar 11 17:47:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/stylesheets/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 17:47:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.5ms)
+
+
+Started GET "/stylesheets/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 17:47:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 17:50:00 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (0.6ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (162.2ms)
+Completed 200 OK in 261ms (Views: 175.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:02:10 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (1.2ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.2ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (1.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (1.6ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (649.1ms)
+Completed 200 OK in 1137ms (Views: 706.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:02:15 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (36.6ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:03:26 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (1.6ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.5ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (1.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (17.4ms)[0m  SELECT DISTINCT tipo FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (681.2ms)
+Completed 200 OK in 1957ms (Views: 766.5ms | ActiveRecord: 21.9ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:03:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (40.3ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:03:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:03:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (28.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 11 18:18:03 -0600 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (20.1ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:18:04 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (5.7ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.2ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (1.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (3.9ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (932.5ms)
+Completed 200 OK in 1945ms (Views: 1020.6ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:18:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (25.9ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:18:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.4ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:18:11 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (21.5ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:36:53 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (13.9ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.6ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (1.2ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (134.3ms)
+Completed 200 OK in 398ms (Views: 184.6ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:36:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:36:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.3ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:36:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/index?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:38:05 -0600 2011
+
+ActionController::RoutingError (No route matches "/index"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/index?educ%5B%5D=E00001&padrinazgo=partage&sexo=m&centro%5B%5D=Villa&desde=5&hasta=7&programa%5B%5D=computacion&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:43:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/index"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 11 18:43:53 -0600 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:43:58 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+Completed   in 1ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/listados_controller.rb:3:in `[]'
+  app/controllers/listados_controller.rb:3:in `busqueda'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (21.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.6ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:44:25 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (128.7ms)
+Completed 200 OK in 219ms (Views: 141.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:44:27 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:44:27 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:44:27 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Fri Mar 11 18:44:37 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (266.6ms)
+Completed 200 OK in 365ms (Views: 279.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:44:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:44:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.2ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:44:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&padrinazgo=partage&sexo=m&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:44:45 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"], "desde"=>"", "hasta"=>"", "sexo"=>"m", "padrinazgo"=>"partage"}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (152.4ms)
+Completed 200 OK in 249ms (Views: 165.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:44:46 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:44:47 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:44:47 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:45:32 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/stylesheets/public/images/img04.jpg" for 127.0.0.1 at Fri Mar 11 18:45:33 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img04.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:45:33 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.7ms)
+
+
+Started GET "/stylesheets/public/images/img03.jpg" for 127.0.0.1 at Fri Mar 11 18:47:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/img03.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:48:52 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (307.1ms)
+Completed 200 OK in 400ms (Views: 320.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:48:53 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:48:54 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:53:50 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (139.1ms)
+Completed 200 OK in 236ms (Views: 152.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:53:52 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:53:52 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:56:32 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (127.2ms)
+Completed 200 OK in 221ms (Views: 140.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:56:34 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:56:55 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (120.6ms)
+Completed 200 OK in 365ms (Views: 133.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:56:56 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:57:51 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.6ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (126.8ms)
+Completed 200 OK in 228ms (Views: 139.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:57:52 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:58:36 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (287.1ms)
+Completed 200 OK in 380ms (Views: 300.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:58:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:59:17 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (121.6ms)
+Completed 200 OK in 213ms (Views: 134.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:59:18 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:59:30 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.5ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (128.4ms)
+Completed 200 OK in 222ms (Views: 141.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:59:30 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 18:59:39 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (129.5ms)
+Completed 200 OK in 232ms (Views: 143.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 18:59:40 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 19:00:02 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:01:09 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (168.9ms)
+Completed 200 OK in 318ms (Views: 185.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 19:01:09 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 19:01:11 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.7ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 19:01:11 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:03:20 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (5.0ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (1.5ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (183.9ms)
+Completed 200 OK in 566ms (Views: 198.4ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/stylesheets/public/images/logo1.png" for 127.0.0.1 at Fri Mar 11 19:03:21 -0600 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/public/images/logo1.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:06:24 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (144.7ms)
+Completed 200 OK in 260ms (Views: 163.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/busqueda?desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:08:07 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.5ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (195.9ms)
+Completed 200 OK in 348ms (Views: 210.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:25:00 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (123.7ms)
+Completed 200 OK in 217ms (Views: 136.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:26:36 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (6.9ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (131.9ms)
+Completed 200 OK in 294ms (Views: 145.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:27:18 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (2.2ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.6ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.6ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (149.3ms)
+Completed 200 OK in 449ms (Views: 335.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:28:03 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (1.0ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (135.2ms)
+Completed 200 OK in 282ms (Views: 149.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:28:34 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (1.7ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (157.7ms)
+Completed 200 OK in 264ms (Views: 171.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 19:29:02 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (140.3ms)
+Completed 200 OK in 278ms (Views: 156.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 20:58:25 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.5ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (152.2ms)
+Completed 200 OK in 273ms (Views: 171.0ms | ActiveRecord: 1.6ms)

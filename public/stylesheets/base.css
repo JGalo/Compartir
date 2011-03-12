@@ -19,11 +19,16 @@ html{
 	width: 12.5em;
 }
 
-#sexo,#centro,#edad {
+#fechaActivo,#programa,#sexo,#centro,#edad {
 	display: inline;
 	width: 15em;
 	margin: 10px;
 	float: left;
+}
+
+.fecha,.edad{
+	width: 3em;
+	height: 1em;
 }
 
 .entry2
