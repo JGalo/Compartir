@@ -35,7 +35,7 @@
 			<h3>Centro</h3>
 			<%unless @centros.nil?%>
 				<%@centros.each do |c|%>
-				 	<input type="checkbox" class="cent" name="centro[]" value=<%="#{c.nombre},#{c.sector}"%>><%="#{c.nombre} #{c.sector} "%> 
+				 	<input type="checkbox" class="cent" name="centro[]" value=<%= "#{c.nombre.gsub(/ /,"_")}_#{c.sector.gsub(/ /,"_") }"%>><%="#{c.nombre} #{c.sector} "%> 
 					</br>
 				<%end%>
 			<%end%>
@@ -67,7 +67,9 @@
 		<input type="submit" name="buscar" value="buscar" />
 	</form>
 </div>
-
+<button>
+<%=link_to "A excel",busqueda_path(:format=>:xls)%> 
+</button>
 <%unless @ninos.nil?%>
 <table>
 <tr> <th>Codigo</th><th> Nombre</th><th> Apellido</th><th>Padrinazgo</th><th>Edad</th><th>sexo</th>
@@ -75,7 +77,8 @@
 </tr>
 
 <%@ninos.each do |nino|%>
-		<tr><td><%=link_to nino.codigo,nino_path(nino.codigo)%></td><td><%=nino.nombre%></td><td><%=nino.apellido%></td><td><%=nino.estadoPadrinazgo%></td><td><%=nino.fechaNac%></td><td><%=nino.sexo%></td><td><%=nino.habitaCon%></td><td><%="#{nino.nombreCentro} #{nino.nombreSector}"%></td><td><%=nino.codigoEducador%></td>
+		<tr><td><%=link_to nino[0],nino_path(nino[0])%></td><td><%=nino[1]%></td><td><%=nino[2]%></td><td><%=nino[3]%></td><td><%=nino[4]%></td><td><%=nino[5]%></td><td><%=nino[6]%></td><td><%="#{nino[7]} #{nino[8]}"%></td><td><%=nino[9]%></td>
+		<td><%=nino[10]%></td>
 		</tr>
 <%end%>
 <%else%>

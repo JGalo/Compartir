@@ -16,4 +16,6 @@ class NinosController < ApplicationController
 
 	def entrada
 	end
+
+
 end

@@ -1,5 +1,9 @@
 AsocCompartir::Application.routes.draw do
 
+
+	get "/nuevopadrino" => "formularios#padriform"
+  get "/padrinos" => "formularios#padrinos"
+	get "/ninoform" => "formularios#ninoform"
 	get "/busqueda" => "listados#busqueda"
   resources :ninos , :only => [:index,:show]
 	root :to => "ninos#entrada"
