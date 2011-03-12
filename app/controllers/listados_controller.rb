@@ -3,7 +3,7 @@ class ListadosController < ApplicationController
 	  p params
 		@educador = Educador.all
 		@centros = Centro.all
-		@ninos = Nino.all
+		@ninos = Nino.buscar_por_parametros params
 		@programas = Programa.buscar_distintos
 	end
 	def educador

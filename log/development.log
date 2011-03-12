@@ -5747,3 +5747,300 @@ Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde
   [1m[35mSQL (0.4ms)[0m  SELECT DISTINCT componente FROM programas
 Rendered listados/busqueda.html.erb within layouts/application (152.2ms)
 Completed 200 OK in 273ms (Views: 171.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 21:59:06 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (312.4ms)
+Completed 200 OK in 414ms (Views: 325.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00005&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:00:40 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00005"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (128.7ms)
+Completed 200 OK in 256ms (Views: 143.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/busqueda?desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:05:50 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (129.5ms)
+Completed 200 OK in 243ms (Views: 142.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/busqueda?desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:06:31 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (150.6ms)
+Completed 200 OK in 518ms (Views: 165.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00002&educ%5B%5D=E00003&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:06:41 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00002", "E00003"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.5ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (150.5ms)
+Completed 200 OK in 242ms (Views: 163.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00002&educ%5B%5D=E00003&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:07:31 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00002", "E00003"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (6.8ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (148.2ms)
+Completed 200 OK in 281ms (Views: 163.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/busqueda?educ%5B%5D=todo&educ%5B%5D=E00001&educ%5B%5D=E00002&educ%5B%5D=E00003&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:08:01 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["todo", "E00001", "E00002", "E00003"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (133.3ms)
+Completed 200 OK in 234ms (Views: 146.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/busqueda?educ%5B%5D=E00001&desde=&hasta=&desde=&hasta=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:16:59 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "educ"=>["E00001"], "desde"=>"", "hasta"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.5ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (180.2ms)
+Completed 200 OK in 271ms (Views: 193.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/busqueda?educ%5B%5D=E00001&desde=&hasta=&desdeEdad=&hastaEdad=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:21:27 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "hastaEdad"=>"", "educ"=>["E00001"], "desde"=>"", "hasta"=>"", "desdeEdad"=>""}
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (230.9ms)
+Completed   in 309ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    72: <tr> <th>Codigo</th><th> Nombre</th><th> Apellido</th><th>Padrinazgo</th><th>Edad</th><th>sexo</th>
+    73: 		 <th>Vive con</th><th>Centro</th><th>Educador</th><th>Grado Escolar</th>
+    74: </tr>
+    75: <%@ninos.each do |nino|%>
+    76: 		<tr><td><%=link_to nino.codigo,nino_path(nino.codigo)%></td><td><%=nino.nombre%></td><td><%=nino.apellido%></td><td><%=nino.estadoPadrinazgo%></td><td><%=nino.fechaNac%></td><td><%=nino.sexo%></td><td><%=nino.habitaCon%></td><td><%="#{nino.nombreCentro} #{nino.nombreSector}"%></td><td><%=nino.codigoEducador%></td>
+    77: 		</tr>
+    78: <%end%>
+  app/views/listados/busqueda.html.erb:75:in `_app_views_listados_busqueda_html_erb__376779257__614160858_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (40.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (60.5ms)
+
+
+Started GET "/busqueda?educ%5B%5D=E00001&desde=&hasta=&desdeEdad=&hastaEdad=&buscar=buscar" for 127.0.0.1 at Fri Mar 11 22:23:29 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  Parameters: {"buscar"=>"buscar", "hastaEdad"=>"", "educ"=>["E00001"], "desde"=>"", "hasta"=>"", "desdeEdad"=>""}
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 168ms (Views: 74.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 11 22:23:53 -0600 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='E0001'[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='E00001'
+
+
+Started GET "/busqueda" for 127.0.0.1 at Sat Mar 12 08:20:17 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (24.4ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.7ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 299ms (Views: 57.8ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:25:43 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (1.5ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 175ms (Views: 28.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:29:11 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 52ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:30:05 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 68ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:30:10 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 63ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:30:14 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 61ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:30:27 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 51ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:31:38 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 79ms (Views: 39.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:32:07 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (3.5ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 127ms (Views: 53.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:40:38 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 65ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:42:22 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Completed   in 95ms
+
+ActionView::MissingTemplate (Missing template ninos/index with {:locale=>[:en, :en], :handlers=>[:builder, :erb, :rjs, :rhtml, :rxml], :formats=>[:html]} in view paths "/home/jose/Dropbox/Clases/BaseDatos/app/views"):
+  app/controllers/ninos_controller.rb:4:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:42:39 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 69ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:42:41 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 56ms (Views: 23.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:42:43 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 50ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:43:43 -0600 2011
+  Processing by NinosController#entrada as HTML
+Rendered ninos/entrada.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:43:45 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 53ms (Views: 21.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 08:43:48 -0600 2011
+  Processing by NinosController#entrada as HTML
+Rendered ninos/entrada.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:43:57 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 77ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 08:44:58 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (1.1ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 68ms (Views: 25.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Sat Mar 12 08:45:01 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 163ms (Views: 71.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 12 09:45:07 -0600 2011
+  Processing by NinosController#entrada as HTML
+Rendered ninos/entrada.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sat Mar 12 09:45:10 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 258ms (Views: 31.1ms | ActiveRecord: 0.4ms)

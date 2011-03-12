@@ -2,6 +2,7 @@ AsocCompartir::Application.routes.draw do
 
 	get "/busqueda" => "listados#busqueda"
   resources :ninos , :only => [:index,:show]
+	root :to => "ninos#entrada"
 	# The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -13,4 +13,7 @@ class NinosController < ApplicationController
 		@nino = Nino.find_by_codigo(codigo)
 		@edad = Nino.edad_Nino(codigo)
 	end
+
+	def entrada
+	end
 end
