@@ -57,8 +57,8 @@
 
 		<div id="edad">
 		<h3>Rango de Edad</h3>
-			Desde: <input class="edad" id="desde" type="text" name="desde" /><br />
-			Hasta:&nbsp; <input class="edad" id="hasta" type="text" name="hasta" />
+			Desde: <input class="edad" id="desde" type="text" name="desdeEdad" /><br />
+			Hasta:&nbsp; <input class="edad" id="hasta" type="text" name="hastaEdad" />
 		</div>
 
 
@@ -68,12 +68,17 @@
 	</form>
 </div>
 
+<%unless @ninos.nil?%>
 <table>
 <tr> <th>Codigo</th><th> Nombre</th><th> Apellido</th><th>Padrinazgo</th><th>Edad</th><th>sexo</th>
 		 <th>Vive con</th><th>Centro</th><th>Educador</th><th>Grado Escolar</th>
 </tr>
+
 <%@ninos.each do |nino|%>
 		<tr><td><%=link_to nino.codigo,nino_path(nino.codigo)%></td><td><%=nino.nombre%></td><td><%=nino.apellido%></td><td><%=nino.estadoPadrinazgo%></td><td><%=nino.fechaNac%></td><td><%=nino.sexo%></td><td><%=nino.habitaCon%></td><td><%="#{nino.nombreCentro} #{nino.nombreSector}"%></td><td><%=nino.codigoEducador%></td>
 		</tr>
+<%end%>
+<%else%>
+ Ningun niño pertenece a ese criterio
 <%end%>
 </table>
