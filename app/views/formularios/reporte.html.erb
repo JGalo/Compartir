@@ -1,0 +1,107 @@
+
+<INPUT TYPE="submit" value="GUARDAR">
+<INPUT TYPE="submit" value="IMPRIMIR">
+<HR NOSHADE>
+<BASEFONT SIZE=6>
+<div id ="contenedorInfo" style type="stylesheets/style.css">
+	<p id="pp"><b>Agarre los atributos que desea utilizar y jalelos hacia el panel a su derecha.</b></p>
+	<div id="CodigoNiño" class="green box" style="cursor:move" style="z-index:3" >CodigoNiño</div>
+	<div id="PrimerNombre" class="green box" style="cursor:move">PrimerNombre</div>
+	<div id="SegundoNombre" class="green box" style="cursor:move" style="color: green">SegundoNombre</div>
+	<div id="PrimerApellido" class="green box" style="cursor:move" style="color: green">PrimerApellido</div>
+	<div id="SegundoApellido" class="green box" style="cursor:move">SegundoApellido</div>
+        <div id="Fecha" class="green box" style="cursor:move" style="color: green" >FechaNacimiento</div>
+	<div id="Edad" class="green box" style="cursor:move">Edad</div>
+	<div id="Educador" class="green box" style="cursor:move">Educador</div>
+	<div id="Sector" class="green box" style="cursor:move" style="color: green">Sector</div>	
+	<div id="Sexo" class="green box" style="cursor:move" style="color: green">Sexo</div>
+	<div id="Direccion" class="green box" style="cursor:move" style="color: green">Direccion</div>
+	<div id="SituacionCompartir" class="green box" style="cursor:move" style="color: green">SituacionCompartir</div>
+	<%= draggable_element :CodigoNiño %>	
+	<%= draggable_element :PrimerNombre %>
+	<%= draggable_element :SegundoNombre %>
+	<%= draggable_element :PrimerApellido %>
+	<%= draggable_element :SegundoApellido %>
+	<%= draggable_element :Fecha %>
+	<%= draggable_element :Edad %>
+	<%= draggable_element :Educador %>
+	<%= draggable_element :Sector %>
+	<%= draggable_element :Sexo %>
+	<%= draggable_element :Direccion %>
+	<%= draggable_element :SituacionCompartir %>
+	
+</div>
+<div id="Informe">
+<div id ="cipote"><style="cursor:move"><img src="images/cipote.jpg" width="104" height="142"></div>
+<%= draggable_element :cipote %>
+
+</div>
+
+
+<section id="editable" contenteditable="true">
+<p>Escriba aqui</p>
+</section>
+<%= draggable_element :editable %>
+
+<div id="Foto"><li class="file optional" id="book_cover_input"><label for="book_cover">Subir Imagen o Archivo aqui:<br></label><input id="book_cover" name="book[cover]" type="file"></li></div>
+
+
+
+<SCRIPT>
+function resizeImage (imageOrImageName, width, height) {
+var image = typeof imageOrImageName == 'string' ?
+document[imageOrImageName] : imageOrImageName;
+if (document.layers) {
+image.currentWidth = width;
+image.currentHeight = height;
+var layerWidth = image.width > width ? image.width : width;
+var layerHeight = image.height > height ? image.height : height;
+if (!image.overLayer) {
+var l = image.overLayer = new Layer(layerWidth);
+}
+var l = image.overLayer;
+l.bgColor = document.bgColor;
+l.clip.width = layerWidth;
+l.clip.height = layerHeight;
+l.left = image.x;
+l.top = image.y;
+var html = '';
+html += '<IMG SRC="images/borde3.jpg"';
+html += image.name ? ' NAME="overLayer' + image.name + '"' : '';
+html += ' WIDTH="' + width + '" HEIGHT="' + height + '">';
+l.document.open();
+l.document.write(html);
+l.document.close();
+l.visibility = 'show';
+}
+else {
+image.width = width;
+image.height = height;
+}
+}
+function zoomImage (imageOrImageName, factor) {
+var image = typeof imageOrImageName == 'string' ?
+document[imageOrImageName] : imageOrImageName;
+if (document.layers) {
+var currentWidth = image.currentWidth ? image.currentWidth :
+image.width;
+var currentHeight = image.currentHeight ? image.currentHeight :
+image.height;
+}
+else {
+var currentWidth = image.width;
+var currentHeight = image.height;
+}
+var width = parseInt(currentWidth * factor);
+var height = parseInt(currentHeight * factor);
+resizeImage(image, width, height);
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<A HREF="javascript: resizeImage(document.images[0], 100, 100); void 0"> 100 100</A> | <A HREF="javascript: resizeImage(document.images[0], 190, 190);void 0">200 200 </A> | <A HREF="javascript: zoomImage(document.images[0], 1.1); void 0">zoom + 10% </A> | <A HREF="javascript: zoomImage(document.images[0],0.9); void 0">zoom - 10% </A> <BR>
+<div id ="bordes"><style="cursor:move"><IMG SRC="images/borde3.jpg"></div>
+
+<%= draggable_element :bordes %>
+</BODY>
+

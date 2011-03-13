@@ -1,0 +1,81 @@
+
+#Informe{
+ margin-left:220px;
+    margin-top:-500px;
+    width:850px;
+    height:630px;
+    font-size: 28px;
+    font-family:'Reenie Beanie',arial,sans-serif; 
+    border-radius: 5px;
+    color: #111;
+    background-repeat: no-repeat;
+    background-color:#FFF;
+    background-position:270px, 10px;
+}
+
+#contenedorInfo{
+margin-left:10px;
+font-size:18px;
+position:relative;
+z-index:3;
+text-align: center;
+height: 500px;
+width: 160px;
+border-width:3px#EAEAAE;
+border-style:solid;
+border-color:gray;
+border:10px outset #cccccc;
+background-color:#cccccc;
+
+font-family: Arial, Helvetica, sans-serif;
+font-size: 17px;
+color: #4E2F2F;
+position:relative;
+
+}
+
+.pp{
+tyle=color:purple; 
+size= 30px;
+}
+
+#editable{
+position:relative;
+z-index:2;
+margin-top:500px; 
+width: 600px;
+	min-height: 80px;
+ 	float: right;
+ 	padding: 10px;
+	color: #525252;
+	
+	-webkit-box-shadow: 7px 7px 7px #99CC32;
+	-moz-box-shadow: 4px 4px 4px #99CC32;
+	box-shadow: 3px 3px 0px #99CC32;
+	
+ 	background-color: #D8D8BF;
+	font-size: 20px;
+ 	
+ 	
+margin: 10px 200px 20px 10px; 
+	
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 8px;
+}
+
+#Foto{
+margin-top:-400px;
+margin-left:600px
+font-size: 28px;
+font-family:'Reenie Beanie',arial,sans-serif; 
+margin-left:10px;
+margin-top:300px; 
+}
+
+#bordes{
+
+border:1px solid #336699;
+float:left;
+}

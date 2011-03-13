@@ -34,5 +34,11 @@ $(document).ready(function (){
 				}}
 	);
 	
+	$("#BotonCodigo").click(function(event){
+
+					
+	s = "ninos/" + $("#codigoN")[0].value;				
+	window.location=s ;});
+
 	}
 );

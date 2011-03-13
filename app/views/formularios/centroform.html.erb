@@ -30,12 +30,17 @@
 		<!-- end #content -->
 		<div id="sidebar">
 			<ul>
-			<li>
-					<h2>Operaciones</h2>
-					<ul>
-						<li><a href="/centronew">Ingresar un Centro</a></li>
-					</ul>
-				</li>
+		
+		<div id="centro">
+			<h3>Centro</h3>
+			<%unless @centros.nil?%>
+				<%@centros.each do |c|%>
+				<li> <%="#{c.nombre} #{c.sector} "%> </li>
+				<%end%>
+			<%end%>
+		</div>
+			
+		
 			</ul>	
 				
 		</div>

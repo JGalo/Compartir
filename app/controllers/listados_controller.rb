@@ -7,7 +7,8 @@ class ListadosController < ApplicationController
 		@programas = Programa.buscar_distintos
 	  respond_to do |format|
 	 	 	  format.html
-		    format.xls { send_data @ninos.to_xls_data, :filename => 'ninos.xls' }
+
+		    format.xls { send_data Nino.tabSeparated(@ninos), :filename => 'ninos.txt' }
 	  end
 
 	end

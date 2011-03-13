@@ -1,6 +1,7 @@
+
+<%unless @nino.blank?%>
 <h2 id="cabecera">Datos de Niño</h2>
 
-<img  src="http://compartirhonduras.org/images/1.jpg">
 <a id="ninoCodigo">Codigo:<%=@nino.codigo%></a>
 <a id="ninoEdad">Edad: <%=@edad[0]%></a>
 <a id="ninoNombre">Nombre: <%=@nino.nombre%></a> 
@@ -34,3 +35,6 @@
 
 </table>
 </div>
+<%else%>
+Por favor, revise el codigo que introdujo. No se encuentra niño con ese codigo.
+<%end%>

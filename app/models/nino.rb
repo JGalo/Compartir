@@ -72,6 +72,9 @@ class Nino < ActiveRecord::Base
 
 
 			unless params[:educ].blank?
+						unless params[:educ][0] == "todo" then
+							
+						
 						unless condiciones.eql? "WHERE "
 						   condiciones += "AND ( "
 						else
@@ -86,11 +89,10 @@ class Nino < ActiveRecord::Base
 							educador = params[:educ][-1] 
 							condiciones += ("ninos.codigoEducador = '#{educador}'")
 							condiciones += ") "
-						
+						end
 			end
 
 
-			p condiciones	
 		
 			if condiciones.eql? "WHERE "
 					condiciones = ""
@@ -98,7 +100,6 @@ class Nino < ActiveRecord::Base
 			consulta += condiciones
 			consulta += " GROUP BY ninos.codigo"
 
-			p consulta
 		 s = ActiveRecord::Base.connection.execute(consulta)
 		 filas = []
 		 s.each do |row|
@@ -128,12 +129,14 @@ class Nino < ActiveRecord::Base
 	end
 
 
-	def self.edad_Nino(codigo)
-	filas = []
-	s = ActiveRecord::Base.connection.execute("SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS age FROM ninos WHERE ninos.codigo='#{codigo}'")
-	s.each do |row|
-		filas << row[0]
+	def self.tabSeparated(arreglo)
+	cadena = " "
+	arreglo.each do |linea|
+		linea.each do |celda|
+			cadena += "#{celda}\t"
+		end
+		cadena += "\n"
 	end
-	filas
+	cadena
 	end
 end

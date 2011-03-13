@@ -5,7 +5,14 @@ AsocCompartir::Application.routes.draw do
   get "/padrinos" => "formularios#padrinos"
 	get "/ninoform" => "formularios#ninoform"
 	get "/busqueda" => "listados#busqueda"
-  resources :ninos , :only => [:index,:show]
+  get "/especifico" => "ninos#buscar"
+	get "/programas" => "formularios#programas"
+	get "/educadores" => "formularios#educaform"
+	get "/centros" => "formularios#centroform"
+	get "/manual" => "ninos#manual"
+	get "/login" => "formularios#loginform"
+	get "/reporte" => "formularios#reporte"
+	resources :ninos , :only => [:index,:show]
 	root :to => "ninos#entrada"
 	# The priority is based upon order of creation:
   # first created -> highest priority.
