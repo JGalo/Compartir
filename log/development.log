@@ -8451,3 +8451,63 @@ ActionController::RoutingError (No route matches "/images/borde3.jpg"):
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/images/borde3.jpg" for 127.0.0.1 at Sat Mar 12 20:32:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/images/borde3.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.3ms)
+
+
+Started GET "/images/cipote.jpg" for 127.0.0.1 at Sat Mar 12 20:32:56 -0600 2011
+
+ActionController::RoutingError (No route matches "/images/cipote.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/images/borde3.jpg" for 127.0.0.1 at Sat Mar 12 20:34:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/images/borde3.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.0ms)
+
+
+Started GET "/images/cipote.jpg" for 127.0.0.1 at Sat Mar 12 20:34:27 -0600 2011
+
+ActionController::RoutingError (No route matches "/images/cipote.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/reporte" for 127.0.0.1 at Sat Mar 12 20:35:17 -0600 2011
+  Processing by FormulariosController#reporte as HTML
+Rendered formularios/reporte.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/cipote.jpg" for 127.0.0.1 at Sat Mar 12 20:35:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/images/cipote.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/images/borde3.jpg" for 127.0.0.1 at Sat Mar 12 20:35:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/images/borde3.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sat Mar 12 20:35:42 -0600 2011
+  Processing by FormulariosController#programas as HTML
+Rendered formularios/programas.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.0ms)
