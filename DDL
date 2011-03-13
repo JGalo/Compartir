@@ -198,6 +198,7 @@ CREATE TABLE expediente_viviendas(
 		propietario varchar(30),
 		luz	varchar(15),
 		agua varchar(15),
+		direccion text,
 		FOREIGN KEY (codigoExpediente) REFERENCES expedientes(codigo) ON DELETE CASCADE ON UPDATE CASCADE,
 		PRIMARY KEY (codigoExpediente)
 	)ENGINE=INNODB DEFAULT CHARSET=utf8;

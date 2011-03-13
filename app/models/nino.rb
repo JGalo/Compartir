@@ -128,15 +128,13 @@ class Nino < ActiveRecord::Base
 		end
 	end
 
-	def self.buscar_por_maestros(educadores)
-			filas = []
-			educadores.each do |codigo|
-			s = ActiveRecord::Base.connection.execute("SELECT ninos.codigo, ninos.nombre, ninos.apellido FROM ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo WHERE educadors.codigo='#{codigo}'")
-			s.each do |row|
-			   filas << row
-				end
-			end
-			filas
+	def self.direccion(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute( "SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='#{codigo}'")
+	s.each do |row|
+		filas << row
+	end
+	filas
 	end
 
 	def self.buscar_familiares(codigo)
@@ -148,7 +146,13 @@ class Nino < ActiveRecord::Base
 		filas
 	end
 
-
+	def self.datos_vivienda(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='#{codigo}'")
+	s.each do |row|
+		filas << row
+		end
+		filas
 	def self.tabSeparated(arreglo)
 	cadena = " "
 	arreglo.each do |linea|
@@ -158,5 +162,14 @@ class Nino < ActiveRecord::Base
 		cadena += "\n"
 	end
 	cadena
+	end
+
+	def self.edad(codigo)
+	filas = []
+	s = ActiveRecod::Base.connection.execute("SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '#{codigo}'")
+	s.each do |row|
+	 filas << row
+	 end
+	 filas
 	end
 end

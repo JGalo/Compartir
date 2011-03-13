@@ -10684,3 +10684,87 @@ Started GET "/ninos/12008912" for 127.0.0.1 at Sun Mar 13 16:00:19 -0600 2011
   [1m[35mNino Load (0.7ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008912') LIMIT 1
 Rendered ninos/show.html.erb within layouts/application (28.2ms)
 Completed 200 OK in 74ms (Views: 42.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 16:11:46 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 50ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 16:11:52 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[35mPrograma Load (0.3ms)[0m  SELECT `programas`.* FROM `programas`
+Rendered formularios/programas.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 48ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 16:11:55 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 50ms (Views: 20.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 16:11:56 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 57ms (Views: 38.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/centros" for 127.0.0.1 at Sun Mar 13 16:11:57 -0600 2011
+  Processing by FormulariosController#centroform as HTML
+  [1m[36mCentro Load (0.4ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered formularios/centroform.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 73ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 16:11:59 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered formularios/educaform.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 80ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 16:12:02 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 16:12:37 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[35mPrograma Load (0.3ms)[0m  SELECT `programas`.* FROM `programas`
+Rendered formularios/programas.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 49ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 16:12:39 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 49ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 16:12:41 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 195ms (Views: 63.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/centros" for 127.0.0.1 at Sun Mar 13 16:12:50 -0600 2011
+  Processing by FormulariosController#centroform as HTML
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered formularios/centroform.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 51ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+  [1m[36mSQL (3.8ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008935'[0m
+  [1m[35mSQL (2.4ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008935'
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008935'[0m
+  [1m[35mSQL (4.9ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008934'
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008934'[0m
+  [1m[35mSQL (2.1ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008934'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008934'[0m
