@@ -13,7 +13,7 @@ class NinosController < ApplicationController
 	def show
 		codigo = params[:id]
 		@nino = Nino.find_by_codigo(codigo)
-		@edad = 14
+		
 	end
 
 	def entrada

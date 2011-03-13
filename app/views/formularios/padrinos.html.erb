@@ -5,6 +5,16 @@
 				<h2 class="title"><a href="#">Gestion de Padrinos</a></h2>
 				<div class="entry">
 					<p>Seleccione en el menu lateral la operacion que desea realizar.</p>
+
+<table>
+<tr> <th>Codigo</th><th>Titulo</th><th> Nombre</th><th>Nacionalidad</th>
+</tr>
+<%@padrinos.each do |padrino|%>
+		<tr><td><%=padrino.codigo%></td><td><%=padrino.titulo%></td><td><%=padrino.nombre%></td><td><%=padrino.nacionalidad%></td>
+		</tr>
+<%end%>
+</table>
+
 					<p class="clearfix">&nbsp;</p>
 				</div>
 			</div>

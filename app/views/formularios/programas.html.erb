@@ -1,0 +1,50 @@
+
+<div class="delado">
+<h3> Educacion </h3>
+<%@programas.each do |p| %>
+	<ul>
+	<%if p.tipo.eql? "educacion"%>
+			<li><%=p.componente%></li>
+	<%end%>
+	</ul>
+<%end%>
+</div>
+<div class="delado">
+</br></br>
+<h3>Integracion Social</h3>
+<%@programas.each do |p| %>
+<ul>
+	<%if p.tipo.eql? "integracion"%>
+			<li><%=p.componente%></li>
+	<%end%>
+	</ul>
+
+<%end%>
+</div>
+</br></br>
+<div class="delado">
+
+<h3>Participacion Comunitaria</h3>
+<%@programas.each do |p| %>
+<ul>
+	<%if p.tipo.eql? "participacion"%>
+			<li><%=p.componente%></li>
+	<%end%>
+	</ul>
+
+<%end%>
+</div>
+
+
+</br>
+
+<%=form_tag( { :action => :savePrograma }, { :method => :post }) %>
+
+<select name="programa">
+	<option value="educacion">Educacion</option>
+	<option value="integracion">Integracion Social</option>
+	<option value="participacion">Participacion Comunitaria</option>
+</select>
+<input type="text" name="componente" id="componenteCrear"> </input>
+<input type=submit value=crear>
+</form>

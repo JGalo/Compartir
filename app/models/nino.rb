@@ -70,7 +70,6 @@ class Nino < ActiveRecord::Base
  					tiposPadrinazgo[params[:padrinazgo]]
 			end
 
-
 			unless params[:educ].blank?
 						unless params[:educ][0] == "todo" then
 							
@@ -92,14 +91,35 @@ class Nino < ActiveRecord::Base
 						end
 			end
 
+			unless params[:programa].blank?
+					unless condiciones.eql? "WHERE "
+						condiciones += "AND ("
+					else
+						condiciones += "( "
+					end
+						consulta_interna = " ninos.codigo IN ( SELECT ninos.codigo FROM (ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino) INNER JOIN programas on programas.componente = participas.componentePrograma "
+						
+						consulta_interna += " WHERE ( "
+						s =  params[:programa].length
+						s -= 1
+						s.times do |j|
+								componente = params[:programa][j]
+								consulta_interna += " (programas.componente = '#{componente}') OR "
+						end
+						componente = params[:programa][-1]
+						consulta_interna += " (programas.componente = '#{componente}' ) "
 
-		
+						consulta_interna += ") ) "
+						condiciones += consulta_interna
+						condiciones += " ) "
+			end
+				
 			if condiciones.eql? "WHERE "
 					condiciones = ""
 			end
 			consulta += condiciones
 			consulta += " GROUP BY ninos.codigo"
-
+	
 		 s = ActiveRecord::Base.connection.execute(consulta)
 		 filas = []
 		 s.each do |row|
