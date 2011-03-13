@@ -4,7 +4,15 @@
 			<div class="post">
 				<h2 class="title"><a href="#">Gestion de Padrinos</a></h2>
 				<div class="entry">
-					<p>Seleccione en el menu lateral la operacion que desea realizar.</p>
+					<p>Ingresar un nuevo padrino.</p>
+				<%=form_tag( { :action => :savePadrino }, { :method => :post }) %>
+Codigo: <input type="text" name="codigo"  class=":required :integer"></input></br>
+Nombre: <input type="text" name="nombre" class=":required"></input> </br>
+Nacionalidad: <input type="text" name="nacionalidad"></input></br>
+Titulo: <input type="text" name="titulo" width=3></input></br>
+</br>
+<input type=submit value=crear>
+</form>
 
 <table>
 <tr> <th>Codigo</th><th>Titulo</th><th> Nombre</th><th>Nacionalidad</th>
@@ -23,18 +31,6 @@
 			<div style="clear: both;">&nbsp;</div>
 		</div>
 		<!-- end #content -->
-		<div id="sidebar">
-			<ul>
-			<li>
-					<h2>Operaciones</h2>
-					<ul>
-						<li><a href="/nuevopadrino">Ingresar un Padrino</a></li>
-						
-					</ul>
-				</li>
-			</ul>	
-				
-		</div>
 		<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>

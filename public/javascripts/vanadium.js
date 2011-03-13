@@ -1030,7 +1030,7 @@ Vanadium.setupValidatorTypes = function() {
     //
     ['required', function(v) {
       return !Vanadium.validators_types['empty'].test(v);
-    }, 'This is a required field.'],
+    }, 'Este campo es requerido, por favor llenarlo.'],
     //
     ['accept', function(v, _p, e) {
       return e.element.checked;
@@ -1040,7 +1040,7 @@ Vanadium.setupValidatorTypes = function() {
       if (Vanadium.validators_types['empty'].test(v)) return true;
       var f = parseFloat(v);
       return (!isNaN(f) && f.toString() == v && Math.round(f) == f);
-    }, 'Please enter a valid integer in this field.'],
+    }, 'El codigo numerico no es valido.'],
     //
     ['number', function(v) {
       return Vanadium.validators_types['empty'].test(v) || (!isNaN(v) && !/^\s+$/.test(v));

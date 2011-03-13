@@ -21,7 +21,18 @@ class FormulariosController < ApplicationController
 		render "/formularios/programas"
 	end
 
+	def savePadrino
+		Padrino.insertar params
+		@padrinos = Padrino.all
+		render "/formularios/padrinos"
+	end
+
+	def saveEducador
+	  @educador = Educador.all
+		render "/formularios/educaform"
+	end
 	def educaform
+		@educador = Educador.all
 	end
 
 	def centroform

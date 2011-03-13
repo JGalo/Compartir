@@ -10150,3 +10150,537 @@ Started POST "/savePrograma" for 127.0.0.1 at Sun Mar 13 13:55:34 -0600 2011
   [1m[36mPrograma Load (0.2ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
 Rendered formularios/programas.html.erb within layouts/application (20.4ms)
 Completed 200 OK in 58ms (Views: 36.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 14:27:15 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.5ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 57ms (Views: 23.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Sun Mar 13 14:27:17 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+Rendered formularios/ninoform.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:27:25 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 52ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 14:27:33 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 53ms (Views: 21.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Sun Mar 13 14:27:37 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+Rendered formularios/ninoform.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 170ms (Views: 169.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 14:27:40 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 56ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Sun Mar 13 14:27:43 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (3.4ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 191ms (Views: 114.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/ninos/12008935" for 127.0.0.1 at Sun Mar 13 14:27:49 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008935"}
+  [1m[35mSQL (2.0ms)[0m  SHOW TABLES
+  [1m[36mNino Load (0.7ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008935') LIMIT 1[0m
+Rendered ninos/show.html.erb within layouts/application (20.5ms)
+Completed   in 87ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    3: <h2 id="cabecera">Datos de Niño</h2>
+    4: 
+    5: <a id="ninoCodigo">Codigo:<%=@nino.codigo%></a>
+    6: <a id="ninoEdad">Edad: <%=@edad[0]%></a>
+    7: <a id="ninoNombre">Nombre: <%=@nino.nombre%></a> 
+    8: <a id="ninoSexo">Sexo: <%=@nino.sexo%></a>
+    9: <a id="ninoEducador">Educador:<%=@nino.codigoEducador%></a>
+  app/views/ninos/show.html.erb:6:in `_app_views_ninos_show_html_erb__592096752__614070158_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (25.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (42.7ms)
+
+
+Started GET "/ninos/12008935" for 127.0.0.1 at Sun Mar 13 14:28:44 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008935"}
+  [1m[35mNino Load (0.3ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008935') LIMIT 1
+Rendered ninos/show.html.erb within layouts/application (189.2ms)
+Completed 200 OK in 240ms (Views: 202.7ms | ActiveRecord: 0.3ms)
+  [1m[36mPadrino Load (0.4ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:31:05 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 55ms (Views: 35.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:36:08 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (4.5ms)
+Completed   in 35ms
+
+ActionView::Template::Error (No route matches {:action=>"savePadrino", :controller=>"formularios"}):
+    5: 				<h2 class="title"><a href="#">Gestion de Padrinos</a></h2>
+    6: 				<div class="entry">
+    7: 					<p>Ingresar un nuevo padrino.</p>
+    8: 				<%=form_tag( { :action => :savePadrino }, { :method => :post }) %>
+    9: <input type="text" name="codigo"></input>
+    10: <input type="text" name="nombre"></input>
+    11: <input type="text" name="nacionalidad"></input>
+  app/views/formularios/padrinos.html.erb:8:in `_app_views_formularios_padrinos_html_erb___933298386__613371468_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (34.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (52.7ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:37:15 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (3.7ms)
+Completed   in 33ms
+
+ActionView::Template::Error (No route matches {:action=>"savePadrino", :controller=>"formularios"}):
+    5: 				<h2 class="title"><a href="#">Gestion de Padrinos</a></h2>
+    6: 				<div class="entry">
+    7: 					<p>Ingresar un nuevo padrino.</p>
+    8: 				<%=form_tag( { :action => :savePadrino }, { :method => :post }) %>
+    9: <input type="text" name="codigo"></input>
+    10: <input type="text" name="nombre"></input>
+    11: <input type="text" name="nacionalidad"></input>
+  app/views/formularios/padrinos.html.erb:8:in `_app_views_formularios_padrinos_html_erb___933298386__614064848_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (38.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (57.1ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:38:04 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 59ms (Views: 40.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:38:13 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 50ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:38:16 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.6ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 64ms (Views: 44.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:39:11 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.5ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 58ms (Views: 38.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:39:26 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[35mPrograma Load (0.3ms)[0m  SELECT `programas`.* FROM `programas`
+Rendered formularios/programas.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 81ms (Views: 51.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:39:29 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 58ms (Views: 39.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 14:40:28 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 14:40:32 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:41:21 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 56ms (Views: 38.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:41:32 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 80ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:44:36 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 60ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:45:40 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 52ms (Views: 35.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:45:59 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[35mPrograma Load (0.3ms)[0m  SELECT `programas`.* FROM `programas`
+Rendered formularios/programas.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 54ms (Views: 36.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:46:28 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 53ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:46:42 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[35mPrograma Load (0.3ms)[0m  SELECT `programas`.* FROM `programas`
+Rendered formularios/programas.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 50ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 14:46:51 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 61ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 14:46:55 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 50ms (Views: 20.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 14:46:56 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 56ms (Views: 37.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/savePadrino" for 127.0.0.1 at Sun Mar 13 15:27:02 -0600 2011
+  Processing by FormulariosController#savePadrino as HTML
+  Parameters: {"nombre"=>"Maria Jose", "titulo"=>"Sra.", "nacionalidad"=>"Italiana", "authenticity_token"=>"z2rv9h6txtIHC7Gya1inO42mhyzFaGpooJDS2MNuVY0=", "utf8"=>"\342\234\223", "codigo"=>"2711011"}
+  [1m[35mSQL (0.8ms)[0m  SELECT * FROM padrinos WHERE padrinos.codigo ='2711011'
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO programas VALUES ('2711011','Maria Jose','Italiana','Sra.');[0m
+Mysql2::Error: Column count doesn't match value count at row 1: INSERT INTO programas VALUES ('2711011','Maria Jose','Italiana','Sra.');
+Completed   in 17ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Column count doesn't match value count at row 1: INSERT INTO programas VALUES ('2711011','Maria Jose','Italiana','Sra.');):
+  app/models/padrino.rb:15:in `insertar'
+  app/controllers/formularios_controller.rb:25:in `savePadrino'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (190.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (206.0ms)
+
+
+Started POST "/savePadrino" for 127.0.0.1 at Sun Mar 13 15:27:59 -0600 2011
+  Processing by FormulariosController#savePadrino as HTML
+  Parameters: {"nombre"=>"Maria Jose", "titulo"=>"Sra.", "nacionalidad"=>"Italiana", "authenticity_token"=>"z2rv9h6txtIHC7Gya1inO42mhyzFaGpooJDS2MNuVY0=", "utf8"=>"\342\234\223", "codigo"=>"2711011"}
+  [1m[35mSQL (0.3ms)[0m  SELECT * FROM padrinos WHERE padrinos.codigo ='2711011'
+  [1m[36mSQL (7.3ms)[0m  [1mINSERT INTO padrinos VALUES ('2711011','Maria Jose','Italiana','Sra.');[0m
+  [1m[35mPadrino Load (0.7ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 72ms (Views: 42.4ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 15:28:03 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 52ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 15:28:04 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 57ms (Views: 22.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 15:28:05 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.3ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 55ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/centros" for 127.0.0.1 at Sun Mar 13 15:28:09 -0600 2011
+  Processing by FormulariosController#centroform as HTML
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered formularios/centroform.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 53ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 15:37:16 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 57ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 15:37:18 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 54ms (Views: 21.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 15:37:19 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[36mPadrino Load (0.4ms)[0m  [1mSELECT `padrinos`.* FROM `padrinos`[0m
+Rendered formularios/padrinos.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 65ms (Views: 45.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/centros" for 127.0.0.1 at Sun Mar 13 15:37:26 -0600 2011
+  Processing by FormulariosController#centroform as HTML
+  [1m[35mCentro Load (0.4ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered formularios/centroform.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 59ms (Views: 33.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:37:27 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:42:35 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:46:15 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 55ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:48:26 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:48:56 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/educador" for 127.0.0.1 at Sun Mar 13 15:49:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/educador"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.9ms)
+
+
+Started POST "/educador" for 127.0.0.1 at Sun Mar 13 15:49:54 -0600 2011
+
+ActionController::RoutingError (No route matches "/educador"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started POST "/educador" for 127.0.0.1 at Sun Mar 13 15:49:59 -0600 2011
+
+ActionController::RoutingError (No route matches "/educador"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:50:31 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:51:21 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/educador" for 127.0.0.1 at Sun Mar 13 15:52:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/educador"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.4ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 15:52:26 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 57ms (Views: 38.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 15:52:31 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 60ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:52:33 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 195ms (Views: 193.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/educador" for 127.0.0.1 at Sun Mar 13 15:54:07 -0600 2011
+  Processing by FormulariosController#saveEducador as HTML
+  Parameters: {"telefono"=>["9591961"], "nombre"=>"Juan Angel", "codigo"=>"132412", "apellidos"=>"Sandoval"}
+Rendered formularios/educaform.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:55:45 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+Rendered formularios/educaform.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:58:05 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered formularios/educaform.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 51ms (Views: 33.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:59:24 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+  [1m[35mEducador Load (0.9ms)[0m  SELECT `educadors`.* FROM `educadors`
+Rendered formularios/educaform.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 101ms (Views: 65.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/educadores" for 127.0.0.1 at Sun Mar 13 15:59:43 -0600 2011
+  Processing by FormulariosController#educaform as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+Rendered formularios/educaform.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 95ms (Views: 65.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 15:59:49 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 71ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 15:59:51 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 54ms (Views: 35.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 15:59:56 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.6ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 56ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/centros" for 127.0.0.1 at Sun Mar 13 15:59:58 -0600 2011
+  Processing by FormulariosController#centroform as HTML
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered formularios/centroform.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 64ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 16:00:00 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 51ms (Views: 20.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/especifico" for 127.0.0.1 at Sun Mar 13 16:00:07 -0600 2011
+  Processing by NinosController#buscar as HTML
+Rendered ninos/buscar.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Sun Mar 13 16:00:12 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 52ms (Views: 21.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Sun Mar 13 16:00:15 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[35mEducador Load (0.5ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (3.5ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (91.8ms)
+Completed 200 OK in 185ms (Views: 105.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/ninos/12008912" for 127.0.0.1 at Sun Mar 13 16:00:19 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008912"}
+  [1m[35mNino Load (0.7ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008912') LIMIT 1
+Rendered ninos/show.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 74ms (Views: 42.8ms | ActiveRecord: 0.7ms)

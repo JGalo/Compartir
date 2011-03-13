@@ -24,10 +24,7 @@ $(document).ready(function (){
 								 x = $(".educ").length;
 								 for ( i =1; i < x; i ++){
 												 $(".educ")[i].checked = false;
-								}
-								 
-								 //elem.checked = false;
-					} 
+								}}
 					else
 					{
 												$(".educ")[0].checked = false;
@@ -40,5 +37,9 @@ $(document).ready(function (){
 	s = "ninos/" + $("#codigoN")[0].value;				
 	window.location=s ;});
 
+	
+
+	$("#numerotlf ").click(function(event){ $("#educForm").append('<br/> <INPUT id = "telefono" TYPE="text" NAME="telefono[]" class=":required"><br/>' )     }) ;
+	
 	}
 );

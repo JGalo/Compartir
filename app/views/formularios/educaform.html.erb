@@ -7,8 +7,10 @@
 					<h1>Inscribir Educador</h1>
 
 <FORM ACTION="/educador" METHOD="POST">
+
+<div id="educForm">
 <label for="code">Codigo del Educador:</label><br/>
-<INPUT id = "code" TYPE="text" NAME="code" class=":required :integer"><br/>
+<INPUT id = "code" TYPE="text" NAME="codigo" class=":required :integer"><br/>
 
 <label for="nombre">Nombres del Educador:</label><br/>
 <INPUT id = "nombre" TYPE="text" NAME="nombre" class=":required"><br/>
@@ -16,8 +18,17 @@
 <label for="apellidos">Apellidos del Educador:</label><br/>
 <INPUT id = "nombre" TYPE="text" NAME="apellidos" class=":required"><br/>
 
+<label for="numero">Numero Telefono:</label><br/>
+<INPUT id = "telefono" TYPE="text" NAME="telefono[]" class=":required"><br/>
+
+</div>
+
 <INPUT TYPE="submit" value="Inscribir Educador">
 </FORM>
+<button id="numerotlf">
+Agregar otro numero:
+</button>
+
 
 					<p class="clearfix">&nbsp;</p>
 				</div>
@@ -28,17 +39,19 @@
 		</div>
 		<!-- end #content -->
 		<div id="sidebar">
+		<div id="educador">
+		<h3>Educador</h3>
+		<%unless @educador.nil?%>
 			<ul>
-			<li>
-					<h2>Operaciones</h2>
-					<ul>
-						<li><a href="/educaform">Ingresar un Educador</a></li>
-					</ul>
-				</li>
-			</ul>	
-				
+			<%@educador.each do |e| %>
+				<li><%="#{e.codigo} #{e.nombre} #{e.apellido}"%> </li>
+			<%end%>
+			</ul>
+		<%end%>
+		</div>	
+
 		</div>
-		<!-- end #sidebar -->
+	<!-- end #sidebar -->
 		<div style="clear: both;">&nbsp;</div>
 	</div>
 </div>
