@@ -10134,3 +10134,19 @@ Started GET "/padrinos" for 127.0.0.1 at Sun Mar 13 13:54:03 -0600 2011
   [1m[35mPadrino Load (1.1ms)[0m  SELECT `padrinos`.* FROM `padrinos`
 Rendered formularios/padrinos.html.erb within layouts/application (168.5ms)
 Completed 200 OK in 228ms (Views: 183.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Sun Mar 13 13:55:26 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[36mPrograma Load (0.3ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 58ms (Views: 38.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/savePrograma" for 127.0.0.1 at Sun Mar 13 13:55:34 -0600 2011
+  Processing by FormulariosController#savePrograma as HTML
+  Parameters: {"authenticity_token"=>"z2rv9h6txtIHC7Gya1inO42mhyzFaGpooJDS2MNuVY0=", "utf8"=>"\342\234\223", "programa"=>"educacion", "componente"=>"computacion"}
+  [1m[35mSQL (1.0ms)[0m  SELECT * FROM programas WHERE programas.tipo ='educacion' and programas.componente = 'computacion'
+  [1m[36mPrograma Load (0.2ms)[0m  [1mSELECT `programas`.* FROM `programas`[0m
+Rendered formularios/programas.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 58ms (Views: 36.4ms | ActiveRecord: 1.3ms)
