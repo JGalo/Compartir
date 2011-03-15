@@ -37,7 +37,9 @@ $(document).ready(function (){
 	s = "ninos/" + $("#codigoN")[0].value;				
 	window.location=s ;});
 
-	
+	$("#descargar").click(function(event){     
+		window.location="/busqueda.db"; 				
+	});
 
 	$("#numerotlf ").click(function(event){ $("#educForm").append('<br/> <INPUT id = "telefono" TYPE="text" NAME="telefono[]" class=":required"><br/>' )     }) ;
 	

@@ -3,7 +3,7 @@ class NinosController < ApplicationController
 		@ninos = Nino.all
 		respond_to do |format|
 		        format.html
-					  format.db  { send_data system "mysqldump -u compartir -pdatos AsocCompartir_development"}
+					  format.db  { send_data (system "mysqldump -u compartir -pdatos AsocCompartir_development") }
 		end
 	end
 

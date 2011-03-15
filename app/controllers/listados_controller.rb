@@ -7,9 +7,13 @@ class ListadosController < ApplicationController
 		@programas = Programa.buscar_distintos
 	  respond_to do |format|
 	 	 	  format.html
-
-		    format.xls { send_data Nino.tabSeparated(@ninos), :filename => 'ninos.txt' }
-	  end
+				format.xls { send_data Nino.tabSeparated(@ninos), :filename => 'ninos.txt' }
+	  	  format.db  { 
+								if (system "mysqldump -u compartir -pdatos asociacionCompartir > base.sql")
+										send_file "base.sql"
+								end
+				}
+		end
 
 	end
 	def educador
