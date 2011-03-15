@@ -11,16 +11,18 @@
 <a id="ninoPadrinazgo"><strong>Estado Padrinazgo: </strong><%=@nino.estadoPadrinazgo%> </a>
 <div id="descripcion">
 	<h3>Descripción del niño</h3>
-	<p>Es un niño muy alegre y trabajador. Se lleva bien con todos a quienes conoce. Le gusta trabajar con manualidades y deportes como el fútbol.<p>
+	<p><%=@descripcion%></p>
 </div>
 
 <div id="vivienda">
 <table>
 	<h3>Datos Vivienda</h3>
 	<tr><th>Fecha</th><th>Componente</th><th>Condicion</th><th>Observacion</th>
+	<%@datos_vivienda.each do |vivienda|%>
 	</tr>
-	<tr><td>01-11-2010</td><td>Piso</td><td>Bueno</td><td>Dañado en ciertos lugares</td>
+	<tr><td><%=vivienda[1]%></td><td><%=vivienda[0]%></td><td><%=vivienda[2]%></td><td><%=vivienda[3]%></td>
 	</tr>
+	<%end%>
 </table>
 </div>
 

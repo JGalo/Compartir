@@ -11884,3 +11884,78 @@ Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:57:24 -0600 2011
   [1m[35mNino Load (0.3ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1
 Rendered ninos/show.html.erb within layouts/application (27.9ms)
 Completed 200 OK in 72ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 22:40:56 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[36mNino Load (0.2ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008902'[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008902'
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008902'[0m
+  [1m[35mSQL (0.9ms)[0m  select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008902'
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008902'[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008902'
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008902'[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008902'
+Rendered ninos/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 89ms (Views: 26.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Mon Mar 14 22:41:01 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 53ms (Views: 21.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Mon Mar 14 22:41:05 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 57ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Mon Mar 14 22:41:06 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mSQL (3.6ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 196ms (Views: 114.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/ninos/12008935" for 127.0.0.1 at Mon Mar 14 22:41:09 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008935"}
+  [1m[36mNino Load (0.7ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008935') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008935') LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008935'[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008935'
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008935'[0m
+  [1m[35mSQL (0.9ms)[0m  select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008935'
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008935'[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008935'
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008935'[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008935'
+Rendered ninos/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 94ms (Views: 25.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/ninos/12008935" for 127.0.0.1 at Mon Mar 14 22:44:22 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008935"}
+  [1m[36mNino Load (0.2ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008935') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008935') LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008935'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008935'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008935'[0m
+  [1m[35mSQL (0.7ms)[0m  select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008935'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008935'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008935'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008935'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008935'
+Rendered ninos/show.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 127ms (Views: 56.9ms | ActiveRecord: 3.2ms)

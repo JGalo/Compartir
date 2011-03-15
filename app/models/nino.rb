@@ -212,5 +212,24 @@ class Nino < ActiveRecord::Base
 	end
 	filas
 	end
+
+	def self.beneficios(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '#{codigo}'")
+	s.each do |row|
+		filas << row
+	end
+	filas
+	end
+
+	def self.programas(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '#{codigo}'")
+	s.each do |row|
+		filas << row
+	end
+	filas
+	end
+
 end
 

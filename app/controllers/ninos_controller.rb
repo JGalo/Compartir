@@ -34,6 +34,8 @@ class NinosController < ApplicationController
 			@datos_vivienda = Nino.datos_vivienda(codigo)
 			@familiares = Nino.buscar_familiares(codigo)
 			@situacionAcademica = Nino.situacion_academica(codigo)
+			@beneficios = Nino.beneficios(codigo)
+			@programas = Nino.programas(codigo)
 		end
 	
 	end
