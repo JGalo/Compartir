@@ -12,9 +12,11 @@ AsocCompartir::Application.routes.draw do
 	get "/manual" => "ninos#manual"
 	get "/login" => "formularios#loginform"
 	get "/reporte" => "formularios#reporte"
+	get "/expediente/:id" => "ninos#expediente"
 	post "/savePrograma" => "formularios#savePrograma"
 	post "/savePadrino" => "formularios#savePadrino"
 	post "/educador" => "formularios#saveEducador"
+	
 	resources :ninos , :only => [:index,:show]
 	root :to => "ninos#entrada"
 	# The priority is based upon order of creation:

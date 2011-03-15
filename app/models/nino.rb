@@ -134,7 +134,10 @@ class Nino < ActiveRecord::Base
 	s.each do |row|
 		filas << row
 	end
-	filas
+	unless filas.blank?
+		 	return filas[0][0]
+	 end
+	 return []
 	end
 
 	def self.buscar_familiares(codigo)
@@ -153,23 +156,39 @@ class Nino < ActiveRecord::Base
 		filas << row
 		end
 		filas
-	def self.tabSeparated(arreglo)
-	cadena = " "
-	arreglo.each do |linea|
-		linea.each do |celda|
-			cadena += "#{celda}\t"
-		end
-		cadena += "\n"
 	end
+
+	def self.tabSeparated(arreglo)
+		cadena = " "
+		arreglo.each do |linea|
+			linea.each do |celda|
+				cadena += "#{celda}\t"
+			end
+			cadena += "\n"
+		end
 	cadena
 	end
 
-	def self.edad(codigo)
-	filas = []
-	s = ActiveRecod::Base.connection.execute("SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '#{codigo}'")
+
+	 def self.encontrarCodigoPorExpediente(codExpediente)
+	 filas = []
+	 s = ActiveRecord::Base.connection.execute("SELECT ninos.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE expedientes.codigo = '#{codExpediente}'")
+	 s.each do |row|
+			filas << row
+	 end
+	 unless filas.blank?
+		 	return filas[0][0]
+	 end
+	 return []
+	 end
+
+	def self.encontrarEdad(codigo )
+ 	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '#{codigo}'")
 	s.each do |row|
 	 filas << row
-	 end
-	 filas
+	end
+	filas
 	end
 end
+
