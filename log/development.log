@@ -11812,3 +11812,75 @@ Started GET "/ninos" for 127.0.0.1 at Mon Mar 14 19:20:50 -0600 2011
   [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
 Rendered ninos/index.html.erb within layouts/application (14.4ms)
 Completed 200 OK in 66ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 21:48:49 -0600 2011
+  Processing by NinosController#entrada as HTML
+Rendered ninos/entrada.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Mon Mar 14 21:49:39 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (17.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 193ms (Views: 38.1ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Mon Mar 14 21:49:43 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[35mEducador Load (0.8ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.9ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (21.0ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (100.4ms)
+Completed 200 OK in 288ms (Views: 130.2ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:49:47 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[35mSQL (2.2ms)[0m  SHOW TABLES
+  [1m[36mNino Load (0.7ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1[0m
+Rendered ninos/show.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 114ms (Views: 56.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:50:20 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[35mNino Load (0.2ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1
+Rendered ninos/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 70ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:50:32 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1[0m
+Rendered ninos/show.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 75ms (Views: 41.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:51:20 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[35mNino Load (0.3ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1
+Rendered ninos/show.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 77ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:53:08 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1[0m
+Rendered ninos/show.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 76ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Mon Mar 14 21:57:24 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[35mNino Load (0.3ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1
+Rendered ninos/show.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 72ms (Views: 40.9ms | ActiveRecord: 0.3ms)

@@ -26,7 +26,16 @@ class NinosController < ApplicationController
 	def show
 		codigo = params[:id]
 		@nino = Nino.find_by_codigo(codigo)
-		
+		unless	@nino.blank?
+			@nino = Nino.find_by_codigo(codigo)
+		 	@edad = Nino.encontrarEdad(codigo)
+			@direccion = Nino.direccion(codigo)
+			@descripcion = Nino.descripcion(codigo)
+			@datos_vivienda = Nino.datos_vivienda(codigo)
+			@familiares = Nino.buscar_familiares(codigo)
+			@situacionAcademica = Nino.situacion_academica(codigo)
+		end
+	
 	end
 
 	def entrada

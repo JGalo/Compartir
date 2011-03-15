@@ -53,27 +53,9 @@ tr:hover
 	background-color:#A8A8A8;
 }
 
-#cabecera{
-	position:absolute;
-	left:500px;
-}
-
-#ninoCodigo
-{
-	position:absolute;
-	left: 350px;
-	top: 80px;
-
-}
-
-
-#ninoEdad
-{
-	position:absolute;
-	left: 570px;
-	top: 80px;
-}
-
+/*
+#ninoCodigo{	position:absolute;	left: 350px;	top: 200px;}
+#ninoEdad{	position:absolute;	left: 570px;	top: 200px;}
 #ninoSexo{ position:absolute; left:570px; top: 110px;}
 #ninoNombre{ position:absolute; left: 350px;top: 110px;}
 #ninoEducador{ position:absolute; left: 700px; top: 80px;}
@@ -82,4 +64,4 @@ tr:hover
 #descripcion{position:absolute; width:400px; left:200px; top:170px; }
 #escolar{position:absolute; left:400px;top: 300px; }
 #vivienda{ position:absolute; left: 600px; top: 170px;}
-#ninoPadrinazgo{position:absolute; left: 870px; top:80px; }
+#ninoPadrinazgo{position:absolute; left: 870px; top:80px; }*/

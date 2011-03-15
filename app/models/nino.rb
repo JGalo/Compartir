@@ -190,5 +190,27 @@ class Nino < ActiveRecord::Base
 	end
 	filas
 	end
+
+
+	def self.descripcion(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '#{codigo}'")
+	s.each do |row|
+		filas << row
+	end
+	unless filas.blank?
+		return filas[0][0]
+	end
+	return []
+	end
+
+	def self.situacion_academica(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '#{codigo}'")
+	s.each do |row|
+		filas << row
+	end
+	filas
+	end
 end
 

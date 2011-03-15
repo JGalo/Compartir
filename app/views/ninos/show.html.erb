@@ -2,13 +2,13 @@
 <%unless @nino.blank?%>
 <h2 id="cabecera">Datos de Niño</h2>
 
-<a id="ninoCodigo">Codigo:<%=@nino.codigo%></a>
-<a id="ninoNombre">Nombre: <%=@nino.nombre%></a> 
-<a id="ninoSexo">Sexo: <%=@nino.sexo%></a>
-<a id="ninoEducador">Educador:<%=@nino.codigoEducador%></a>
+<a id="ninoCodigo"><strong>Codigo:</strong><%=@nino.codigo%></a>
+<a id="ninoNombre"><strong>Nombre:</strong> <%=@nino.nombre%></a> 
+<a id="ninoSexo"><strong>Sexo:</strong> <%=@nino.sexo%></a>
+<a id="ninoEducador"><strong>Educador</strong> <%=@nino.codigoEducador%></a>
 <a id="ninoSector"><%=@nino.nombreSector%></a>
-<a id="ninoBarrio">Barrio:<%=@nino.nombreCentro%></a>
-<a id="ninoPadrinazgo">Estado Padrinazgo: <%=@nino.estadoPadrinazgo%> </a>
+<a id="ninoBarrio"><strong>Barrio:</strong><%=@nino.nombreCentro%></a>
+<a id="ninoPadrinazgo"><strong>Estado Padrinazgo: </strong><%=@nino.estadoPadrinazgo%> </a>
 <div id="descripcion">
 	<h3>Descripción del niño</h3>
 	<p>Es un niño muy alegre y trabajador. Se lleva bien con todos a quienes conoce. Le gusta trabajar con manualidades y deportes como el fútbol.<p>
