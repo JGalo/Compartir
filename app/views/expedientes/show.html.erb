@@ -1,0 +1,32 @@
+<button id="modificar">
+<%=link_to "Modificar Expediente",edit_nino_expediente_path(@nino.codigo,@codigoExpediente)%>
+</button>
+Niño con expediente <%=@codigoExpediente%>
+
+<%unless @nino.nil? %>
+<div id="generales">
+	<h3>Datos Generales</h3>
+	<ol>
+			<li><strong>Nombre del niño:</strong> <%=@nino.nombre%>  <%=@nino.apellido%></li>
+			<li><strong>Fecha de Nacimiento:</strong> <%=@nino.fechaNac%> </li>
+			<li><strong>Edad</strong> <%=@edad[0]%>  <strong> Sexo</strong> <%=@nino.sexo%></li>
+			<li><strong>Domicilio: </strong><%unless @direccion.blank?%><%=@direccion%> <%end%> </li>
+			<li><strong>Fecha de inicio de ingreso a los servicios: </strong> <%=@expediente.fecha%>  </li>
+			<li><strong>Area de atencion: </strong> <%=@nino.nombreCentro%> <%=@nino.nombreSector%> </li>
+	</ol>
+</div>
+
+<div id="familiares">
+	<h3>REFERENCIAS FAMILIARES</h3>
+</div>
+
+<div id="trabajo">
+	<h3>SITUACION DEL NIÑO QUE TRABAJA</h3>
+	
+</div>
+
+<div id="SALUD">
+
+</div>
+
+<%end%>

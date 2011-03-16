@@ -8,24 +8,27 @@
 
 
 
-<FORM ACTION="/nino" METHOD="POST">
+<FORM ACTION="/ninos/create" METHOD="POST">
 <label for="code">Foto del Niño:</label><br/>
 <INPUT id = "fotilo" TYPE="text" NAME="code"><br/>
 <INPUT TYPE="submit" value="Examinar"><br/>
 
 <label for="code">Codigo del Niño:</label><br/>
 <INPUT id = "code" TYPE="text" NAME="code" class=":required :integer"><br/>
+
+<label for="code">Codigo del Expediente:</label><br/>
+<INPUT id = "code" TYPE="text" NAME="expediente" class=":required"><br/>
  
 <label for="nombre">Nombres del Niño:</label><br/>
 <INPUT id = "nombre" TYPE="text" NAME="nombre" class=":required"><br/>
  
 <label for="apellido">Apellidos del Niño:</label><br/>
 <INPUT id = "apellido" TYPE="text" NAME="apellido" class=":required"><br/>
- 
-<label for="padrinazgo">Estado Padrinazgo:</label><br/>
-<INPUT id = "padrinazgo" TYPE="text" NAME="padrinazgo" class=":required"><br/> 
 
-<label for="fecha">Fecha Nacimiento:</label><br/>
+<label for="fechaNac">Fecha Nacimiento:</label><br/>
+<INPUT id = "fechaNac" TYPE="text" NAME="fechaNac" class=":required :date"><br/>
+
+<label for="fecha">Fecha Ingreso:</label><br/>
 <INPUT id = "fecha" TYPE="text" NAME="fecha" class=":required :date"><br/>
 
 <label for="sexo">Sexo:</label><br/>
@@ -35,17 +38,23 @@
 </SELECT> 
 <br/>
 
-<label for="habita">Personas con las que Habita:</label><br/>
-<textarea name="habita" rows="5" cols="25" class=":required"></textarea><br/>
-
-<label for="centro">Nombre del Centro:</label><br/>
-<INPUT id = "centro" TYPE="text" NAME="centro" class=":required"><br/>
-
-<label for="sector">Sector:</label><br/>
-<INPUT id = "sector" TYPE="text" NAME="sector" class=":required"><br/>
+<div id="centro">
+			<h3>Centro</h3>
+			<%unless @centros.nil?%>
+				<%@centros.each do |c|%>
+				 	<input type="radio" class="cent" name="centro" value=<%= "#{c.nombre.gsub(/ /,"_")}_#{c.sector.gsub(/ /,"_") }"%>><%="#{c.nombre} #{c.sector} "%> 
+					</br>
+				<%end%>
+			<%end%>
+		</div>
 
 <label for="codigo">Codigo del Educador Asignado:</label><br/>
-<INPUT id = "codigo" TYPE="text" NAME="codigo" class=":required :integer"><br/>
+ <%unless @educador.nil?%>
+			<%@educador.each do |e| %>
+				<input id=<%=e.codigo%> type="radio" class="educ" name="educ" value=<%=e.codigo%>><%="#{e.codigo} #{e.nombre} #{e.apellido}"%>  </input></br>
+			<%end%>
+		<%end%>
+
 
 
 <INPUT TYPE="submit" value="Inscribir Niño">
@@ -64,11 +73,9 @@
 					<h2>Operaciones</h2>
 					<ul>
 						<li><a href="/ninoform">Ingresar un Niño</a></li>
-						<li><a href="/acaform">Situacion Academica</a></li>
-						<li><a href="/famform">Ingresar Familiar</a></li>
-						<li><a href="/vivi">Expediente Vivienda</a></li>
-						<li><a href="/juri">Expediente Juridico</a></li>
-						<li><a href="/salu">Expediente Salud</a></li>
+						<li><a href="/busqueda">Listado de Niños</a></li>
+						<li><a href="/especifico">Niño especifico </a></li>
+						<li><a href="/reporte">Reportes</a><li>
 					</ul>
 				</li>
 			</ul>	

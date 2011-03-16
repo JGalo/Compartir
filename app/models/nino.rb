@@ -231,5 +231,17 @@ class Nino < ActiveRecord::Base
 	filas
 	end
 
+	def self.numeroExpediente(codigo)
+	filas = []
+	s = ActiveRecord::Base.connection.execute("SELECT expedientes.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE ninos.codigo = '#{codigo}'")
+	s.each do |row|
+		filas << row
+	end
+	unless filas.blank?
+		return filas[0][0]
+	end
+	return []
+
+	end
 end
 

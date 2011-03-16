@@ -1,4 +1,8 @@
+
+
 class NinosController < ApplicationController
+	protect_from_forgery :only => [:create, :update, :destroy]
+
 	def index
 		@ninos = Nino.all
 		respond_to do |format|
@@ -7,19 +11,8 @@ class NinosController < ApplicationController
 		end
 	end
 
-	def expediente
-		@codigoExpediente = params[:id]
-		p @codigoExpediente
-		unless @codigoExpediente.blank?
-		  @codigo = Nino.encontrarCodigoPorExpediente(@codigoExpediente)
-		  @nino = Nino.find_by_codigo(@codigo)
-		 	@edad = Nino.encontrarEdad(@codigo)
-			@direccion = Nino.direccion(@codigo)
-			@expediente = Expediente.find_by_codigo(@codigoExpediente)
-		else
-			@nino = nil
-		end
-	end
+
+	
 	def manual
 	end
 
@@ -36,6 +29,7 @@ class NinosController < ApplicationController
 			@situacionAcademica = Nino.situacion_academica(codigo)
 			@beneficios = Nino.beneficios(codigo)
 			@programas = Nino.programas(codigo)
+			@expediente = Nino.numeroExpediente(codigo)
 		end
 	
 	end
@@ -44,6 +38,10 @@ class NinosController < ApplicationController
 	end
 	def buscar
 	end
-
+	
+	def create
+	p params
+	render "/ninos"
+	end
 
 end

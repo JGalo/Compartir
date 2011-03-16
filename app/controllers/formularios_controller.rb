@@ -1,7 +1,8 @@
 class FormulariosController < ApplicationController
 	protect_from_forgery :only => [:create, :update, :destroy]
-	
 	def ninoform
+		@educador = Educador.all
+		@centros = Centro.all
 	end
 
 	def padrinos

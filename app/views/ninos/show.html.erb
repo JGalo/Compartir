@@ -1,7 +1,9 @@
 
 <%unless @nino.blank?%>
 <h2 id="cabecera">Datos de Niño</h2>
-
+<button>
+<%=link_to "expediente",nino_expediente_path(@nino.codigo,@expediente)  %> 
+</button>
 <a id="ninoCodigo"><strong>Codigo:</strong><%=@nino.codigo%></a>
 <a id="ninoNombre"><strong>Nombre:</strong> <%=@nino.nombre%></a> 
 <a id="ninoSexo"><strong>Sexo:</strong> <%=@nino.sexo%></a>

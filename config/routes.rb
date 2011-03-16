@@ -16,8 +16,11 @@ AsocCompartir::Application.routes.draw do
 	post "/savePrograma" => "formularios#savePrograma"
 	post "/savePadrino" => "formularios#savePadrino"
 	post "/educador" => "formularios#saveEducador"
+	post "/ninos/create" => "ninos#create"
+	resources :ninos , :only => [:index,:show] do
+		resources :expedientes, :except => [:index,:destroy,:new]
+	end
 	
-	resources :ninos , :only => [:index,:show]
 	root :to => "ninos#entrada"
 	# The priority is based upon order of creation:
   # first created -> highest priority.
