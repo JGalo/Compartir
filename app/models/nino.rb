@@ -243,5 +243,20 @@ class Nino < ActiveRecord::Base
 	return []
 
 	end
+
+	def self.salvar(params)
+		
+	  cys = params[:centro].split("_") 
+		hasta = cys.length -  2
+		centro = ""
+	  hasta.times do |i|
+		     centro += cys[i] + " "
+		end
+		sector = cys[-2] + " " + cys[-1]
+		p params	
+
+		ActiveRecord::Base.connection.execute("INSERT INTO ninos VALUES ('#{params[:code]}','#{params[:nombre]}','#{params[:apellido]}','Por ingresar','#{params[:fechaNac]}','#{params[:sexo]}','NULL','#{centro}','#{sector}','#{params[:educ]}' );")
+		ActiveRecord::Base.connection.execute("INSERT INTO expedientes VALUES ('#{params[:expediente]}','#{params[:fecha]}','#{params[:educ]}','#{params[:code]}' );")
+	end
 end
 

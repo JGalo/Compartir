@@ -39,9 +39,10 @@ class NinosController < ApplicationController
 	def buscar
 	end
 	
-	def create
-	p params
-	render "/ninos"
+	def crear
+		Nino.salvar(params)
+
+		redirect_to :action => "show", :id => params[:code]
 	end
 
 end

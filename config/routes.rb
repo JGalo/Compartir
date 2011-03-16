@@ -16,7 +16,7 @@ AsocCompartir::Application.routes.draw do
 	post "/savePrograma" => "formularios#savePrograma"
 	post "/savePadrino" => "formularios#savePadrino"
 	post "/educador" => "formularios#saveEducador"
-	post "/ninos/create" => "ninos#create"
+	post "/ninos/crear" => "ninos#crear"
 	resources :ninos , :only => [:index,:show] do
 		resources :expedientes, :except => [:index,:destroy,:new]
 	end

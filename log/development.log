@@ -12316,3 +12316,354 @@ ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticit
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.8ms)
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.6ms)
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (74.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 23:32:39 -0600 2011
+  Processing by NinosController#entrada as HTML
+Rendered ninos/entrada.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Tue Mar 15 23:32:44 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.8ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 187ms (Views: 23.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/padrinos" for 127.0.0.1 at Tue Mar 15 23:33:06 -0600 2011
+  Processing by FormulariosController#padrinos as HTML
+  [1m[35mPadrino Load (0.3ms)[0m  SELECT `padrinos`.* FROM `padrinos`
+Rendered formularios/padrinos.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 89ms (Views: 64.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Tue Mar 15 23:33:09 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (4.9ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 71ms (Views: 29.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Tue Mar 15 23:33:18 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (3.3ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (106.4ms)
+Completed 200 OK in 232ms (Views: 130.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/ninos/12008904" for 127.0.0.1 at Tue Mar 15 23:33:23 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008904"}
+  [1m[35mSQL (2.0ms)[0m  SHOW TABLES
+  [1m[36mNino Load (0.2ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008904') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008904') LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008904'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008904'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008904'[0m
+  [1m[35mSQL (0.2ms)[0m  select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008904'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008904'[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008904'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008904'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008904'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT expedientes.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE ninos.codigo = '12008904'[0m
+Rendered ninos/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 100ms (Views: 28.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Tue Mar 15 23:33:26 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 331ms (Views: 294.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Tue Mar 15 23:33:29 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered formularios/ninoform.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 136ms (Views: 82.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/ninos/create" for 127.0.0.1 at Tue Mar 15 23:34:02 -0600 2011
+  Processing by NinosController#create as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Completed   in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (17.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (50.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (90.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 23:45:55 -0600 2011
+  Processing by NinosController#entrada as HTML
+Rendered ninos/entrada.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Tue Mar 15 23:45:58 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.5ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 229ms (Views: 63.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Tue Mar 15 23:46:00 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+  [1m[35mEducador Load (1.0ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered formularios/ninoform.html.erb within layouts/application (173.8ms)
+Completed 200 OK in 401ms (Views: 249.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Tue Mar 15 23:46:35 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00002", "centro"=>"Villa_Nueva_Sector_2", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Completed   in 112ms
+
+ActionView::MissingTemplate (Missing template /ninos with {:handlers=>[:rjs, :rhtml, :builder, :erb, :rxml], :locale=>[:en, :en], :formats=>[:html]} in view paths "/home/jose/Dropbox/Clases/BaseDatos/app/views", "/home/jose/Dropbox/Clases/BaseDatos", "/"):
+  app/controllers/ninos_controller.rb:45:in `crear'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (9.7ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Tue Mar 15 23:47:42 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00002", "centro"=>"Villa_Nueva_Sector_2", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Rendered ninos/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/programas" for 127.0.0.1 at Tue Mar 15 23:47:47 -0600 2011
+  Processing by FormulariosController#programas as HTML
+  [1m[35mPrograma Load (0.3ms)[0m  SELECT `programas`.* FROM `programas`
+Rendered formularios/programas.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 71ms (Views: 47.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Tue Mar 15 23:47:49 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 113ms (Views: 37.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Tue Mar 15 23:49:04 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered formularios/ninoform.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 304ms (Views: 55.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Tue Mar 15 23:49:47 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00007", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"12-12-2001", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Rendered ninos/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 58ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Tue Mar 15 23:49:58 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (2.7ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 90ms (Views: 46.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Tue Mar 15 23:50:03 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+  [1m[36mEducador Load (1.1ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered formularios/ninoform.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 121ms (Views: 70.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Tue Mar 15 23:50:41 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00006", "centro"=>"Los_Pinos_Sector_1", "sexo"=>"M", "fecha"=>"12-12-01", "fechaNac"=>"1-1-95", "apellido"=>"Calix Calix"}
+Rendered ninos/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 61ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Wed Mar 16 00:14:14 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (0.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 100ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Wed Mar 16 00:14:19 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+  [1m[35mEducador Load (1.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+Rendered formularios/ninoform.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 408ms (Views: 88.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Wed Mar 16 00:14:23 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[35mEducador Load (0.3ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (0.3ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (4.1ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (117.3ms)
+Completed 200 OK in 295ms (Views: 140.2ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/ninos/12008902" for 127.0.0.1 at Wed Mar 16 00:14:27 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008902"}
+  [1m[35mSQL (8.6ms)[0m  SHOW TABLES
+  [1m[36mNino Load (0.3ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008902') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008902'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008902'
+  [1m[36mSQL (3.3ms)[0m  [1mSELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008902'[0m
+  [1m[35mSQL (0.3ms)[0m  select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008902'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008902'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008902'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008902'[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008902'
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT expedientes.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE ninos.codigo = '12008902'[0m
+Rendered ninos/show.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 403ms (Views: 106.5ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Wed Mar 16 00:20:50 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (0.6ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 141ms (Views: 57.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ninoform" for 127.0.0.1 at Wed Mar 16 00:20:54 -0600 2011
+  Processing by FormulariosController#ninoform as HTML
+  [1m[36mEducador Load (0.3ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (0.3ms)[0m  SELECT `centros`.* FROM `centros`
+Rendered formularios/ninoform.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 99ms (Views: 57.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Wed Mar 16 00:21:16 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Redirected to http://localhost:3000/ninos/12008936
+Completed 302 Found in 50ms
+
+
+Started GET "/ninos/12008936" for 127.0.0.1 at Wed Mar 16 00:21:16 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008936"}
+  [1m[36mNino Load (0.8ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1[0m
+Rendered ninos/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 75ms (Views: 35.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Wed Mar 16 00:22:47 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Redirected to http://localhost:3000/ninos/12008936
+Completed 302 Found in 170ms
+
+
+Started GET "/ninos/12008936" for 127.0.0.1 at Wed Mar 16 00:22:48 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008936"}
+  [1m[35mNino Load (9.4ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1
+Rendered ninos/show.html.erb within layouts/application (157.6ms)
+Completed 200 OK in 707ms (Views: 342.4ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Wed Mar 16 00:42:28 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Completed   in 374ms
+
+NoMethodError (private method `split' called for 49:Fixnum):
+  app/models/nino.rb:249:in `salvar'
+  app/controllers/ninos_controller.rb:43:in `crear'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (35.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (382.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (582.4ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Wed Mar 16 00:42:31 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+Completed   in 2355ms
+
+NoMethodError (private method `split' called for 49:Fixnum):
+  app/models/nino.rb:249:in `salvar'
+  app/controllers/ninos_controller.rb:43:in `crear'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (79.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (398.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (664.8ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Wed Mar 16 00:43:48 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+  [1m[36mSQL (14.9ms)[0m  [1mINSERT INTO ninos VALUES ('12008936','Juan Angel','Calix Calix','Por ingresar','1995-12-31','M','NULL','Villa Nueva ','E00003' );[0m
+Mysql2::Error: Column count doesn't match value count at row 1: INSERT INTO ninos VALUES ('12008936','Juan Angel','Calix Calix','Por ingresar','1995-12-31','M','NULL','Villa Nueva ','E00003' );
+Completed   in 338ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Column count doesn't match value count at row 1: INSERT INTO ninos VALUES ('12008936','Juan Angel','Calix Calix','Por ingresar','1995-12-31','M','NULL','Villa Nueva ','E00003' );):
+  app/models/nino.rb:258:in `salvar'
+  app/controllers/ninos_controller.rb:43:in `crear'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (93.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (440.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (708.6ms)
+
+
+Started POST "/ninos/crear" for 127.0.0.1 at Wed Mar 16 00:46:45 -0600 2011
+  Processing by NinosController#crear as HTML
+  Parameters: {"expediente"=>"EXP00036", "nombre"=>"Juan Angel", "code"=>"12008936", "educ"=>"E00003", "centro"=>"Villa_Nueva_Sector_1", "sexo"=>"M", "fecha"=>"2001-1-1", "fechaNac"=>"1995-12-31", "apellido"=>"Calix Calix"}
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO ninos VALUES ('12008936','Juan Angel','Calix Calix','Por ingresar','1995-12-31','M','NULL','Villa Nueva ','Sector 1','E00003' );
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO expedientes VALUES ('EXP00036','2001-1-1','E00003','12008936' );[0m
+Redirected to http://localhost:3000/ninos/12008936
+Completed 302 Found in 487ms
+
+
+Started GET "/ninos/12008936" for 127.0.0.1 at Wed Mar 16 00:46:47 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008936"}
+  [1m[35mNino Load (2.7ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1[0m
+  [1m[35mSQL (3.7ms)[0m  SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (6.2ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008936'[0m
+  [1m[35mSQL (17.9ms)[0m  SELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (3.7ms)[0m  [1mselect componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008936'[0m
+  [1m[35mSQL (27.5ms)[0m  SELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008936'
+  [1m[36mSQL (11.5ms)[0m  [1mSELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (2.8ms)[0m  SELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (25.4ms)[0m  [1mSELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (9.6ms)[0m  SELECT expedientes.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE ninos.codigo = '12008936'
+Rendered ninos/show.html.erb within layouts/application (283.3ms)
+Completed 200 OK in 1154ms (Views: 515.9ms | ActiveRecord: 172.6ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Wed Mar 16 00:47:13 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[36mNino Load (6.5ms)[0m  [1mSELECT `ninos`.* FROM `ninos`[0m
+Rendered ninos/index.html.erb within layouts/application (137.8ms)
+Completed 200 OK in 1013ms (Views: 444.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Wed Mar 16 00:47:25 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[35mEducador Load (1.7ms)[0m  SELECT `educadors`.* FROM `educadors`
+  [1m[36mCentro Load (20.8ms)[0m  [1mSELECT `centros`.* FROM `centros`[0m
+  [1m[35mSQL (31.3ms)[0m  SELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo
+  [1m[36mSQL (14.7ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
+Rendered listados/busqueda.html.erb within layouts/application (1696.3ms)
+Completed 200 OK in 3173ms (Views: 1994.1ms | ActiveRecord: 68.5ms)
