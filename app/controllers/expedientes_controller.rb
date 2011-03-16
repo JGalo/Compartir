@@ -4,6 +4,8 @@ class ExpedientesController < ApplicationController
 	end
 
 	def edit
+		@codigoNino = params[:nino_id]
+		@codigoExpediente = params[:id]
 	end
 
 	def show

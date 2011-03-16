@@ -1,0 +1,19 @@
+<%=form_tag("/ninos/#{@codigoNino}/expedientes/#{@codigoExpediente}",:action=> "put") %>
+<div id="generales">
+	<h2>Datos Generales</h2>
+	<strong>Nombre:</strong><input type="text" name="nombre"/>        <strong>Apellido</strong><input type="text" name="apellido"/> </br>
+	<strong>Fecha de Nacimiento</strong><input type="text" name="nombre" class=":date"/> </br>
+	<strong>Sexo: </strong>
+	<input type="radio" name="sexo" value="m">m</input> <input type="radio" name="sexo" value="f">f</input>
+	<strong>Fecha de Ingreso:</strong><input type="text" name="fecha" class=":date"/>
+
+</div>
+
+<div id="familiares">
+
+	<button>
+	</button>
+</div>
+
+	<input type="submit" value="Crear"/>
+</form>

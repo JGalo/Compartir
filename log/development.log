@@ -12667,3 +12667,407 @@ Started GET "/busqueda" for 127.0.0.1 at Wed Mar 16 00:47:25 -0600 2011
   [1m[36mSQL (14.7ms)[0m  [1mSELECT DISTINCT componente FROM programas[0m
 Rendered listados/busqueda.html.erb within layouts/application (1696.3ms)
 Completed 200 OK in 3173ms (Views: 1994.1ms | ActiveRecord: 68.5ms)
+
+
+Started GET "/ninos/12008936" for 127.0.0.1 at Wed Mar 16 00:51:39 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008936"}
+  [1m[35mNino Load (1.1ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1[0m
+  [1m[35mSQL (2.7ms)[0m  SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008936'[0m
+  [1m[35mSQL (2.9ms)[0m  SELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (6.5ms)[0m  [1mselect componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008936'[0m
+  [1m[35mSQL (9.6ms)[0m  SELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008936'
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (6.0ms)[0m  SELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (16.3ms)[0m  SELECT expedientes.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE ninos.codigo = '12008936'
+Rendered ninos/show.html.erb within layouts/application (172.0ms)
+Completed 200 OK in 1263ms (Views: 300.0ms | ActiveRecord: 47.6ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036" for 127.0.0.1 at Wed Mar 16 00:51:57 -0600 2011
+  Processing by ExpedientesController#show as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+  [1m[36mSQL (2.9ms)[0m  [1mSELECT ninos.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE expedientes.codigo = 'EXP00036'[0m
+  [1m[35mNino Load (6.9ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1
+  [1m[36mSQL (3.8ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (2.0ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008936'
+  [1m[36mExpediente Load (2.5ms)[0m  [1mSELECT `expedientes`.* FROM `expedientes` WHERE (`expedientes`.`codigo` = 'EXP00036') LIMIT 1[0m
+Rendered expedientes/show.html.erb within layouts/application (612.2ms)
+Completed 200 OK in 1632ms (Views: 797.9ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:00:43 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 236ms (Views: 230.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos" for 127.0.0.1 at Wed Mar 16 01:09:34 -0600 2011
+  Processing by NinosController#index as HTML
+  [1m[35mNino Load (2.4ms)[0m  SELECT `ninos`.* FROM `ninos`
+Rendered ninos/index.html.erb within layouts/application (155.0ms)
+Completed 200 OK in 671ms (Views: 295.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/busqueda" for 127.0.0.1 at Wed Mar 16 01:09:56 -0600 2011
+  Processing by ListadosController#busqueda as HTML
+  [1m[36mEducador Load (4.7ms)[0m  [1mSELECT `educadors`.* FROM `educadors`[0m
+  [1m[35mCentro Load (3.3ms)[0m  SELECT `centros`.* FROM `centros`
+  [1m[36mSQL (15.9ms)[0m  [1mSELECT ninos.codigo, ninos.nombre, ninos.apellido,ninos.estadoPadrinazgo,(YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) AS edad,ninos.sexo,ninos.habitaCon,ninos.nombreCentro,ninos.nombreSector,ninos.codigoEducador, MAX(situacion_academicas.grado) FROM (ninos INNER JOIN educadors ON ninos.codigoEducador = educadors.codigo) left outer join situacion_academicas on ninos.codigo = situacion_academicas.codigoNino GROUP BY ninos.codigo[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT DISTINCT componente FROM programas
+Rendered listados/busqueda.html.erb within layouts/application (710.9ms)
+Completed 200 OK in 1553ms (Views: 862.6ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/ninos/12008936" for 127.0.0.1 at Wed Mar 16 01:10:07 -0600 2011
+  Processing by NinosController#show as HTML
+  Parameters: {"id"=>"12008936"}
+  [1m[36mNino Load (0.9ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1
+  [1m[36mSQL (3.4ms)[0m  [1mSELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008936'
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT historials.descripcion FROM historials INNER JOIN ninos ON historials.codigoNino = ninos.codigo WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (6.0ms)[0m  select componente_viviendas.nombre,componente_viviendas.revision, componente_viviendas.condicion, componente_viviendas.observacion from ((ninos inner join expedientes on ninos.codigo = expedientes.codigoNino) inner join expediente_viviendas on expedientes.codigo = expediente_viviendas.codigoExpediente) inner join componente_viviendas on componente_viviendas.codigoExpediente = expediente_viviendas.codigoExpediente WHERE ninos.codigo ='12008936'
+  [1m[36mSQL (3.7ms)[0m  [1mSELECT familiars.nombre,familiars.apellido FROM (ninos INNER JOIN esfamiliars ON ninos.codigo = esfamiliars.codigoNino) INNER JOIN familiars ON esfamiliars.nombreFamiliar = familiars.nombre AND esfamiliars.apellidoFamiliar = familiars.apellido WHERE ninos.codigo='12008936'[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT situacion_academicas.anio,situacion_academicas.grado, situacion_academicas.indice,situacion_academicas.observacion,situacion_academicas.centro FROM ninos INNER JOIN situacion_academicas ON ninos.codigo = situacion_academicas.codigoNino WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT beneficios.tipoBeneficio, beneficios.fecha, beneficios.detalle, beneficios.importe, beneficios.observacion FROM ninos INNER JOIN beneficios ON ninos.codigo = beneficios.codigoNino WHERE ninos.codigo = '12008936'[0m
+  [1m[35mSQL (2.0ms)[0m  SELECT participas.tipoPrograma,participas.componentePrograma, participas.fechaInic, participas.fechaFinal, participas.resultado FROM ninos INNER JOIN participas ON ninos.codigo = participas.codigoNino WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT expedientes.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE ninos.codigo = '12008936'[0m
+Rendered ninos/show.html.erb within layouts/application (87.9ms)
+Completed 200 OK in 737ms (Views: 191.0ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036" for 127.0.0.1 at Wed Mar 16 01:10:18 -0600 2011
+  Processing by ExpedientesController#show as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+  [1m[35mSQL (1.1ms)[0m  SELECT ninos.codigo FROM ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino WHERE expedientes.codigo = 'EXP00036'
+  [1m[36mNino Load (14.4ms)[0m  [1mSELECT `ninos`.* FROM `ninos` WHERE (`ninos`.`codigo` = '12008936') LIMIT 1[0m
+  [1m[35mSQL (8.6ms)[0m  SELECT (YEAR(CURDATE())-YEAR(ninos.fechaNac))-(RIGHT(CURDATE(),5)<RIGHT(ninos.fechaNac,5)) FROM ninos WHERE ninos.codigo = '12008936'
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT expediente_viviendas.direccion FROM (ninos INNER JOIN expedientes ON ninos.codigo = expedientes.codigoNino) INNER JOIN expediente_viviendas ON expedientes.codigo = expediente_viviendas.codigoExpediente WHERE ninos.codigo='12008936'[0m
+  [1m[35mExpediente Load (1.7ms)[0m  SELECT `expedientes`.* FROM `expedientes` WHERE (`expedientes`.`codigo` = 'EXP00036') LIMIT 1
+Rendered expedientes/show.html.erb within layouts/application (135.1ms)
+Completed 200 OK in 620ms (Views: 184.2ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:10:24 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+ERROR: compiling _app_views_expedientes_edit_html_erb__547629756__614386418_0 RAISED compile error
+/home/jose/Dropbox/Clases/BaseDatos/app/views/expedientes/edit.html.erb:5: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _app_views_expedientes_edit_html_erb__547629756__614386418_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "expedientes/edit";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append= (form_tag("/ninos/#{@codigoNino}/expedientes/#{@codigoExpediente}",:action=> "put") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+');end
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/jose/Dropbox/Clases/BaseDatos/app/views/expedientes/edit.html.erb:5:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__502198218__process_action__155074602__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:76:in `pre_process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:74:in `catch'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:74:in `pre_process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:57:in `process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:42:in `receive_data'
+/usr/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
+/usr/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/base.rb:57:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/server.rb:156:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/controllers/controller.rb:80:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `send'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `run_command'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:143:in `run!'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/bin/thin:6
+/usr/bin/thin:19:in `load'
+/usr/bin/thin:19
+Rendered expedientes/edit.html.erb within layouts/application (9.3ms)
+Completed   in 80ms
+
+ActionView::Template::Error (compile error
+/home/jose/Dropbox/Clases/BaseDatos/app/views/expedientes/edit.html.erb:5: syntax error, unexpected kENSURE, expecting $end):
+    2: 
+    3: <%end%>
+  app/views/expedientes/edit.html.erb:5:in `compile'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (58.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (250.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (452.0ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:12:18 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+ERROR: compiling _app_views_expedientes_edit_html_erb__547629756__613044498_0 RAISED compile error
+/home/jose/Dropbox/Clases/BaseDatos/app/views/expedientes/edit.html.erb:5: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _app_views_expedientes_edit_html_erb__547629756__613044498_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "expedientes/edit";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append= (form_tag("/ninos/#{@codigoNino}/expedientes/#{@codigoExpediente}",:action=> "put") );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/jose/Dropbox/Clases/BaseDatos/app/views/expedientes/edit.html.erb:5:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__502198218__process_action__155074602__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:76:in `pre_process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:74:in `catch'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:74:in `pre_process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:57:in `process'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/connection.rb:42:in `receive_data'
+/usr/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
+/usr/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/base.rb:57:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/server.rb:156:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/controllers/controller.rb:80:in `start'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `send'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `run_command'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:143:in `run!'
+/usr/lib/ruby/gems/1.8/gems/thin-1.2.7/bin/thin:6
+/usr/bin/thin:19:in `load'
+/usr/bin/thin:19
+Rendered expedientes/edit.html.erb within layouts/application (61.7ms)
+Completed   in 209ms
+
+ActionView::Template::Error (compile error
+/home/jose/Dropbox/Clases/BaseDatos/app/views/expedientes/edit.html.erb:5: syntax error, unexpected kENSURE, expecting $end):
+    2: 
+    3: <% end %>
+  app/views/expedientes/edit.html.erb:5:in `compile'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (34.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (228.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (406.1ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:13:16 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 179ms (Views: 171.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:15:50 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (92.3ms)
+Completed 200 OK in 261ms (Views: 242.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:19:57 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 180ms (Views: 172.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:23:30 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (91.8ms)
+Completed 200 OK in 257ms (Views: 240.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ninos/12008936/expedientes/EXP00036" for 127.0.0.1 at Wed Mar 16 01:23:46 -0600 2011
+
+ActionController::RoutingError (No route matches "/ninos/12008936/expedientes/EXP00036"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:24:26 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (103.4ms)
+Completed 200 OK in 218ms (Views: 211.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ninos/12008936/expedientes/EXP00036" for 127.0.0.1 at Wed Mar 16 01:24:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/ninos/12008936/expedientes/EXP00036"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (36.9ms)
+
+
+Started POST "/ninos/12008936/expedientes/EXP00036" for 127.0.0.1 at Wed Mar 16 01:24:44 -0600 2011
+
+ActionController::RoutingError (No route matches "/ninos/12008936/expedientes/EXP00036"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (27.5ms)
+
+
+Started GET "/ninos/12008936/expedientes/EXP00036/edit" for 127.0.0.1 at Wed Mar 16 01:25:06 -0600 2011
+  Processing by ExpedientesController#edit as HTML
+  Parameters: {"id"=>"EXP00036", "nino_id"=>"12008936"}
+Rendered expedientes/edit.html.erb within layouts/application (79.1ms)
+Completed 200 OK in 199ms (Views: 183.8ms | ActiveRecord: 0.0ms)
